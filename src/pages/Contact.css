@@ -1,0 +1,171 @@
+body{
+font-family: Arial;
+margin:0;
+}
+
+/* NAVBAR */
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:10px 40px;
+background:#fff;
+}
+
+.logo{
+height:60px;
+}
+
+.nav-links{
+display:flex;
+list-style:none;
+gap:30px;
+}
+
+.nav-links li{
+cursor:pointer;
+}
+
+.contact-btn{
+background:#ead9b6;
+padding:8px 20px;
+border-radius:20px;
+}
+
+.icons span{
+margin-left:15px;
+font-size:18px;
+cursor:pointer;
+}
+
+
+/* CONTACT SECTION */
+
+.contact-container{
+display:flex;
+gap:40px;
+padding:40px;
+}
+
+/* LEFT */
+
+.contact-left{
+width:50%;
+}
+
+.contact-image{
+width:100%;
+border-radius:20px;
+}
+
+.touch-box{
+margin-top:20px;
+background:#f5f1ee;
+padding:20px;
+border-radius:15px;
+}
+
+.touch-item{
+display:flex;
+align-items:center;
+margin-top:20px;
+}
+
+.icon{
+background:#e8c35e;
+color:white;
+width:40px;
+height:40px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+margin-right:15px;
+}
+
+
+/* RIGHT */
+
+.contact-form{
+width:50%;
+background:#f7f4f2;
+padding:30px;
+border-radius:20px;
+}
+
+.contact-form h1{
+text-align:center;
+margin-bottom:20px;
+}
+
+.contact-form label{
+display:block;
+margin-top:15px;
+}
+
+.contact-form input,
+.contact-form textarea{
+width:100%;
+padding:12px;
+margin-top:8px;
+border-radius:10px;
+border:1px solid #ccc;
+}
+
+.contact-form textarea{
+height:120px;
+}
+
+.contact-form button{
+margin-top:20px;
+width:100%;
+padding:15px;
+border:none;
+background:#7b1e1e;
+color:white;
+font-size:16px;
+border-radius:10px;
+cursor:pointer;
+}
+
+
+/* FOOTER */
+
+.footer{
+background:#f2b500;
+display:flex;
+justify-content:space-around;
+padding:40px;
+margin-top:40px;
+}
+
+.footer-section{
+width:20%;
+}
+
+.footer-logo{
+width:120px;
+margin-top:10px;
+}
+
+.footer-section h3{
+margin-bottom:10px;
+}
+
+.footer-section p{
+margin:6px 0;
+cursor:pointer;
+}
+
+
+/* COPYRIGHT */
+
+.copyright{
+  background:#e6a800;
+  text-align:center;
+  padding:15px;
+  border-top:1px solid rgba(0,0,0,0.2);
+  margin:0;
+}
+

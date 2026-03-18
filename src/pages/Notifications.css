@@ -1,0 +1,119 @@
+body{
+margin:0;
+font-family: Arial, Helvetica, sans-serif;
+background:#fafafa;
+}
+
+/* NAVBAR */
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+background:#fff;
+border-bottom:1px solid #eee;
+}
+
+.logo img{
+height:55px;
+}
+
+.navLinks{
+display:flex;
+gap:30px;
+list-style:none;
+}
+
+.navLinks a{
+text-decoration:none;
+color:#222;
+font-weight:500;
+}
+
+.navIcons{
+display:flex;
+gap:20px;
+font-size:20px;
+}
+
+.navIcons a{
+text-decoration:none;
+color:#8b1d1d;
+}
+
+
+/* NOTIFICATION SECTION */
+
+.notificationContainer{
+padding:40px;
+}
+
+.notificationContainer h1{
+font-size:32px;
+margin-bottom:5px;
+}
+
+.notificationContainer p{
+color:#555;
+margin-bottom:25px;
+}
+
+
+/* NOTIFICATION CARD */
+
+.notificationCard{
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:#fff;
+border:1px solid #e7c9c9;
+border-radius:15px;
+padding:20px;
+margin-bottom:20px;
+box-shadow:0 2px 8px rgba(0,0,0,0.05);
+}
+
+.notificationLeft{
+display:flex;
+align-items:center;
+gap:15px;
+font-size:18px;
+}
+
+.notificationLeft img{
+width:40px;
+height:40px;
+}
+
+.notificationDate{
+color:#333;
+font-size:16px;
+}
+
+
+/* FOOTER */
+
+.footer{
+display:flex;
+justify-content:space-between;
+background:#f3b21b;
+padding:40px;
+margin-top:50px;
+flex-wrap:wrap;
+}
+
+.footerCol{
+max-width:250px;
+}
+
+.footerCol p{
+margin:6px 0;
+}
+
+.copyright{
+text-align:center;
+padding:10px;
+background:#f3b21b;
+border-top:1px solid rgba(0,0,0,0.1);
+}

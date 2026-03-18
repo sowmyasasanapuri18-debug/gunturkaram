@@ -1,0 +1,185 @@
+body{
+font-family: Arial;
+margin:0;
+background:#fafafa;
+}
+
+/* NAVBAR */
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+background:#fff;
+border-bottom:1px solid #eee;
+}
+
+.logo img{
+height:55px;
+}
+
+.navLinks{
+display:flex;
+gap:30px;
+list-style:none;
+}
+
+.navLinks a{
+text-decoration:none;
+color:#333;
+font-weight:500;
+}
+
+.navIcons{
+display:flex;
+gap:20px;
+font-size:20px;
+}
+
+.navIcons a{
+text-decoration:none;
+color:#8b1d1d;
+}
+
+
+/* CHECKOUT */
+
+.checkoutContainer{
+display:flex;
+gap:40px;
+padding:40px;
+}
+
+/* PAYMENT */
+
+.paymentBox{
+flex:1;
+background:#fff;
+padding:25px;
+border-radius:12px;
+box-shadow:0 3px 10px rgba(0,0,0,0.08);
+}
+
+.paymentOption{
+display:flex;
+gap:10px;
+margin:15px 0;
+}
+
+.paymentOption p{
+font-size:13px;
+color:#777;
+margin:0;
+}
+
+.input{
+width:100%;
+padding:12px;
+margin:10px 0;
+border:1px solid #ddd;
+border-radius:8px;
+}
+
+.row{
+display:flex;
+gap:10px;
+}
+
+
+/* CART SUMMARY */
+
+.cartSummary{
+flex:1;
+background:#fff;
+padding:25px;
+border-radius:12px;
+box-shadow:0 3px 10px rgba(0,0,0,0.08);
+}
+
+.cartItem{
+display:flex;
+align-items:center;
+gap:20px;
+}
+
+.cartItem img{
+width:80px;
+border-radius:10px;
+}
+
+.itemDetails p{
+margin:3px 0;
+color:#666;
+}
+
+.qtyControl{
+margin-left:auto;
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.qtyControl button{
+background:#8b1d1d;
+color:#fff;
+border:none;
+width:30px;
+height:30px;
+border-radius:50%;
+font-size:18px;
+cursor:pointer;
+}
+
+.priceRow{
+display:flex;
+justify-content:space-between;
+margin:10px 0;
+font-size:18px;
+}
+
+.total{
+font-weight:bold;
+font-size:20px;
+}
+
+
+/* PAY BUTTON */
+
+.payBtn{
+width:300px;
+margin:20px 40px;
+background:#8b1d1d;
+color:#fff;
+padding:18px;
+text-align:center;
+font-size:24px;
+border-radius:10px;
+cursor:pointer;
+}
+
+
+/* FOOTER */
+
+.footer{
+display:flex;
+justify-content:space-between;
+background:#f2fc32;
+padding:40px;
+margin-top:50px;
+flex-wrap:wrap;
+}
+
+.footerCol{
+max-width:250px;
+}
+
+.footerCol p{
+margin:6px 0;
+}
+
+.copyright{
+text-align:center;
+padding:10px;
+background:#f3b21b;
+}

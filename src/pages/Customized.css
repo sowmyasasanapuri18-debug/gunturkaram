@@ -1,0 +1,191 @@
+.custom-page{
+font-family: Arial;
+background:#f5f5f5;
+}
+
+/* HERO */
+
+.custom-hero{
+height:250px;
+background:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),
+url("../assets/custom.jpg");
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:center;
+padding-left:80px;
+color:white;
+}
+
+.hero-text h1{
+font-size:42px;
+margin:0;
+}
+
+.hero-text p{
+margin-top:10px;
+}
+
+/* MAIN LAYOUT */
+
+.custom-container{
+display:flex;
+gap:40px;
+padding:40px 80px;
+align-items:flex-start;
+}
+
+/* LEFT */
+
+.custom-left{
+flex:3;
+}
+
+/* STEP HEADER */
+
+.step-title{
+display:flex;
+align-items:center;
+gap:10px;
+margin-bottom:15px;
+}
+
+/* STEP CIRCLE */
+
+.step{
+/* background:#7a1f1f; */
+color:white;
+width:35px;
+/* height:35px; */
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+font-weight:bold;
+}
+
+/* CARD GRID */
+
+.card-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+margin-top:20px;
+margin-bottom:40px;
+}
+
+.card{
+background:white;
+border-radius:10px;
+box-shadow:0 2px 6px rgba(0,0,0,0.1);
+padding:10px;
+text-align:center;
+cursor:pointer;
+transition:0.2s;
+}
+
+.card:hover{
+transform:scale(1.05);
+}
+
+.card img{
+width:100%;
+height:120px;
+object-fit:cover;
+border-radius:8px;
+}
+
+/* SPICE */
+
+.spice{
+display:flex;
+gap:20px;
+margin:20px 0;
+}
+
+.spice button{
+padding:10px 20px;
+border:none;
+background:#eee;
+border-radius:6px;
+cursor:pointer;
+}
+
+/* TOGGLE */
+
+.toggle{
+display:flex;
+gap:30px;
+margin:20px 0;
+}
+
+/* QUANTITY */
+
+.quantity{
+display:flex;
+gap:20px;
+align-items:center;
+}
+
+.qty-box{
+display:flex;
+align-items:center;
+border:1px solid #ccc;
+padding:10px 20px;
+border-radius:10px;
+gap:15px;
+}
+
+.qty-box button{
+background:#7a1f1f;
+color:white;
+border:none;
+padding:6px 12px;
+border-radius:50%;
+cursor:pointer;
+}
+
+/* SUMMARY */
+
+.summary{
+flex:1;
+background:white;
+padding:25px;
+border-radius:15px;
+box-shadow:0 4px 10px rgba(0,0,0,0.15);
+height:fit-content;
+position:sticky;
+top:100px;
+}
+
+.summary-row{
+display:flex;
+justify-content:space-between;
+margin:12px 0;
+}
+
+.total{
+font-weight:bold;
+color:#7a1f1f;
+}
+
+.cart-btn{
+width:100%;
+margin-top:20px;
+padding:10px;
+/* background:white; */
+border:1px solid #7a1f1f;
+border-radius:6px;
+cursor:pointer;
+}
+
+.order-btn{
+width:100%;
+margin-top:10px;
+padding:12px;
+background:#7a1f1f;
+color:white;
+border:none;
+border-radius:6px;
+cursor:pointer;
+}
