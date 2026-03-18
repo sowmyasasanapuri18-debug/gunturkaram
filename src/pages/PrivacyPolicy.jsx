@@ -39,20 +39,15 @@ function PrivacyPolicy() {
         {/* LEFT SIDEBAR */}
         <div className="sidebar">
 
-          <div className="menu-item">
-            <span className="icon">👤</span>
-            My Profile
-          </div>
+          <div className="menu-item">👤 My Profile</div>
 
-          <div className="menu-item">
-            <span className="icon">👤</span>
-            Orders
-          </div>
+<div className="menu-item">👤 Orders</div>
+<div className="menu-item active" >👤 Privacy and Policy</div>
 
-          <div className="menu-item active">
-            <span className="icon">👤</span>
-            Privacy and Policy
-          </div>
+
+          
+
+          
 
         <div className="menu-item" onClick={() => navigate("/terms")}>
   👤 Terms and Conditions

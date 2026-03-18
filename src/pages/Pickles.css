@@ -49,14 +49,14 @@ border-radius:50px;
 padding:5px;
 }
 
-.toggle button{
+/* .toggle button{
 border:none;
 padding:12px 30px;
 border-radius:40px;
 cursor:pointer;
 background:transparent;
 font-weight:600;
-}
+} */
 
 .toggle .active{
 background:#1aa038;

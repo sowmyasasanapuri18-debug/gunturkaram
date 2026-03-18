@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./Nonvegpickles.css";
 
 import hero from "../assets/pickle1.jpeg";
@@ -6,6 +7,8 @@ import pickle from "../assets/pickle.jpg";
 import logo from "../assets/logo.jpg";
 
 const Nonvegpickles = () => {
+  const navigate = useNavigate();
+  
 
 const products = [
 {
@@ -85,7 +88,12 @@ From tangy mango to fiery prawns.
 
 <div className="toggle">
 
-<button className="veg-btn">Veg</button>
+<button 
+className="veg-btn"
+onClick={() => navigate("/Pickles")}
+>
+Veg
+</button>
 
 <button className="nonveg-btn">
 🍗 Non Veg
@@ -178,6 +186,7 @@ Add to Cart
 </div>
 
 
+ 
 {/* FOOTER */}
 
 <footer className="footer">

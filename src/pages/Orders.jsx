@@ -168,13 +168,13 @@ Home &gt; Orders
 <p>Return & 7-Day Replacement</p>
 <p>COD Available</p>
 <p>Secure Payments</p>
-</div>
+<p>© 2026 Guntur Kaaram. All rights reserved. FSSAI Lic. No. 12345678901234</p>
 
 </div>
 
-<div className="copyright">
-© 2026 Guntur Kaaram . All rights reserved.
 </div>
+
+
 
 </footer>
 

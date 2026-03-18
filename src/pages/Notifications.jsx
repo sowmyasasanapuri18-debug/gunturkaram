@@ -76,49 +76,54 @@ function Notifications() {
 
       </div>
 
+{/* FOOTER */}
 
-      {/* FOOTER */}
-      <footer className="footer">
+<footer className="footer">
 
-        <div className="footerCol">
-          <h2>Guntur kaaram</h2>
-          <p>
-            Bringing you authentic, homemade pickles crafted with love
-            and tradition since 2026.
-          </p>
-        </div>
+<div className="footer-grid">
 
-        <div className="footerCol">
-          <h3>Quick</h3>
-          <p>About Us</p>
-          <p>Veg Pickles</p>
-          <p>Non Veg Pickles</p>
-          <p>Customized</p>
-          <p>Contact Us</p>
-        </div>
+<div>
 
-        <div className="footerCol">
-          <h3>Policies</h3>
-          <p>Shipping Policy</p>
-          <p>Return & Refund</p>
-          <p>Privacy Policy</p>
-          <p>Terms of Services</p>
-          <p>FAQ</p>
-        </div>
+<img src={logo} className="logo" alt="logo"/>
 
-        <div className="footerCol">
-          <h3>Trust & Safety</h3>
-          <p>4.8⭐ Rated by 10,000+ Customers</p>
-          <p>Return & 7-Day Replacement</p>
-          <p>COD Available</p>
-          <p>Secure Payments</p>
-        </div>
+<p>
+Bringing you authentic, homemade pickles crafted with love and tradition since 2026.
+</p>
 
-      </footer>
+</div>
 
-      <div className="copyright">
-        © 2026 Guntur Kaaram . All rights reserved.
-      </div>
+<div>
+<h4>Quick</h4>
+<p>About Us</p>
+<p>Veg Pickles</p>
+<p>Non Veg Pickles</p>
+<p>Customized</p>
+<p>Contact Us</p>
+</div>
+
+<div>
+<h4>Policies</h4>
+<p>Shipping Policy</p>
+<p>Return & Refund</p>
+<p>Privacy Policy</p>
+<p>Terms of Services</p>
+</div>
+
+<div>
+<h4>Trust & Safety</h4>
+<p>4.8⭐ Rated by 10,000+ Customers</p>
+<p>Return & 7-Day Replacement Policy</p>
+<p>COD Available</p>
+<p>Secure Payments</p>
+</div>
+
+</div>
+
+<p className="copyright">
+© 2026 Guntur Kaaram. All rights reserved.
+</p>
+
+</footer>
 
     </div>
   );

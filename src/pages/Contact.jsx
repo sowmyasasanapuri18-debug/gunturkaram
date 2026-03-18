@@ -131,11 +131,15 @@ function Contact() {
     <p>Return & 7-Day Replacement</p>
     <p>COD Available</p>
     <p>Secure Payments</p>
+    {/* <p>© 2026 Guntur Kaaram . All rights reserved. FSSAI Lic. No. 12345678901234</p> */}
   </div>
-  </div>
-<div className="copyright">
+  <div className="copyright">
   © 2026 Guntur Kaaram . All rights reserved. FSSAI Lic. No. 12345678901234
 </div>
+  </div>
+{/* <div className="copyright">
+  © 2026 Guntur Kaaram . All rights reserved. FSSAI Lic. No. 12345678901234
+</div> */}
 </div>
     
 

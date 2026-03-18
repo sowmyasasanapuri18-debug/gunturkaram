@@ -183,13 +183,15 @@ onClick={() => navigate("/orders")}
           <p>Secure Payments</p>
         </div>
 
-      </footer>
+      
 
       <div className="copyright">
         © 2026 Guntur Kaaram . All rights reserved.
       </div>
+      </footer>
 
     </div>
+  
   );
 }
 

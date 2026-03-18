@@ -44,7 +44,7 @@ border-radius:20px;
 }
 
 .login-btn{
-background:#7b1e1e;
+background:#721212;
 color:white;
 border:none;
 padding:10px 16px;
@@ -117,13 +117,27 @@ border-radius:25px;
 cursor:pointer;
 }
 
-.nonveg-btn{
-background:#e11d1d;
-color:white;
+/* .nonveg-btn{
+background:#e81616;
+color:rgb(19, 17, 17);
 border:none;
 padding:10px 25px;
 border-radius:25px;
 cursor:pointer;
+} */
+
+.nonveg-btn {
+    border: none;
+    padding: 12px 30px;
+    border-radius: 40px;
+    cursor: pointer;
+    background: #ef1404;
+    font-weight: 600;
+}
+
+ nonveg-btn.active {
+    background: #ef1404;
+    color: white;
 }
 
 
