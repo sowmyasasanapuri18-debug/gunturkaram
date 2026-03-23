@@ -161,29 +161,3 @@ cursor:pointer;
 }
 
 
-/* FOOTER */
-
-.footer{
-background:#f2b721;
-margin-top:40px;
-padding:40px;
-}
-
-.footer-grid{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:40px;
-}
-
-.footer h3{
-margin-bottom:10px;
-}
-
-.footer p{
-margin:5px 0;
-}
-
-.copyright{
-text-align:center;
-margin-top:20px;
-}

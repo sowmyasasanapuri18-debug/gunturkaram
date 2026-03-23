@@ -1,6 +1,8 @@
 import React from "react";
 import "./About.css";
 import { useNavigate } from "react-router-dom";
+import Footer from "../components/Footer"; 
+
 
 import logo from "../assets/logo.jpg";
 import hero from "../assets/Hero1.jpeg";
@@ -34,10 +36,9 @@ function About() {
 
       <section
         className="hero"
-        style={{ backgroundImage: `url(${hero})` }}
-      >
+        style={{ backgroundImage: `url(${hero})` }}>
 
-        <div className="hero-overlay">
+        <div id="heroOverlay" className="hero-overlay">
 
           <h1>
             Rooted in Tradition Crafted
@@ -195,53 +196,11 @@ function About() {
 
 
 
-      {/* FOOTER */}
+  
 
-      <footer className="footer">
+     
 
-        <div className="footer-grid">
-
-          <div>
-            <img src={logo} className="logo" alt="logo"/>
-      
-            <p>
-              Bringing you authentic homemade pickles crafted
-              with love and tradition since 2026.
-            </p>
-          </div>
-
-          
-<div>
-<h4>Quick</h4>
-<p>About Us</p>
-<p>Veg Pickles</p>
-<p>Non Veg Pickles</p>
-<p>Customized</p>
-<p>Contact Us</p>
-</div>
-
-<div>
-<h4>Policies</h4>
-<p>Shipping Policy</p>
-<p>Return & Refund</p>
-<p>Privacy Policy</p>
-<p>Terms of Services</p>
-</div>
-
-<div>
-<h4>Trust & Safety</h4>
-<p>4.8⭐ Rated by 10,000+ Customers</p>
-<p>Return & 7-Day Replacement Policy</p>
-<p>COD Available</p>
-<p>Secure Payments</p>
-</div>
-        </div>
-
-        <p className="copyright">
-          © 2026 Guntur Kaaram. All rights reserved.
-        </p>
-
-      </footer>
+     <Footer />
 
     </div>
   );

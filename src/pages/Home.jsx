@@ -387,7 +387,11 @@
 // export default Home;
 
 
-import React from "react";
+import React, { useState } from "react";
+import SuccessPopup from "./SuccessPopup";
+import Footer from "../components/Footer"; 
+
+
 import { useNavigate } from "react-router-dom";
 import "./Home.css";
 
@@ -410,6 +414,24 @@ import packing from "../assets/packing.jpg";
 function Home() {
 
 const navigate = useNavigate();
+const [showPopup, setShowPopup] = useState(false);
+const [wishlist, setWishlist] = useState({});
+
+const handleAddToCart = (e) => {
+  e.stopPropagation(); // IMPORTANT: stops navigation
+  setShowPopup(true);
+
+  setTimeout(() => {
+    setShowPopup(false);
+  }, 2000);
+};
+const toggleWishlist = (id) => {
+  setWishlist((prev) => ({
+    ...prev,
+    [id]: !prev[id]
+  }));
+};
+
 
 /* PRODUCTS WITH ID (FIXED) */
 const products = [
@@ -426,7 +448,7 @@ id: 2,
 name: "Gongura Pickle",
 price: "₹350",
 oldPrice: 400,
-desc: "Made from freshly harvested sorrel leaves, slow-cooked with aromatic spices for a rich, tangy kick.",
+desc: "Made from freshly harvested sorrel leaves, slow-cooked with aromatic spices for a rich, tangy kickA classic Andhra-style.",
 image: gongura
 },
 {
@@ -434,7 +456,7 @@ id: 3,
 name: "Chicken Pickle",
 price: "₹350",
 oldPrice: 400,
-desc: "Tender chicken marinated in signature masala and slow-cooked in premium oil.",
+desc: "Tender chicken pieces marinated in sognature masala and slow-cooked in premium oil for deep flavor.",
 image: chicken
 },
 {
@@ -442,7 +464,7 @@ id: 4,
 name: "Prawn Pickle",
 price: "₹350",
 oldPrice: 400,
-desc: "Juicy prawns infused with bold spices and preserved in flavorful oil.",
+desc: "Juicy prawns infused with bold spices and preserved in flavorful oil for long-lasting freshness.",
 image: prawn
 }
 ];
@@ -471,8 +493,8 @@ return (
 <li onClick={()=>navigate("/")}>Home</li>
 <li onClick={()=>navigate("/about")}>About Us</li>
 <li>Pickles</li>
-<li onClick={()=>navigate("/customized")}>Customized</li>
-<li onClick={()=>navigate("/contact-us")}>Contact Us</li>
+<li>Customized</li>
+<li>Contact Us</li>
 </ul>
 
 <button className="login-btn" onClick={() => navigate("/login")}>
@@ -544,36 +566,54 @@ Customized Pickles
 
 <div className="products">
 
-{products.map((item)=>(
-<div
-className="card"
-key={item.id}
-onClick={() => navigate(`/product/${item.id}`)}
->
+{products.map((item) => (
+  <div className="card" key={item.id}>
 
-<img src={item.image} alt={item.name}/>
+    {/* IMAGE CLICK */}
+    <img
+       src={item.image}
+      alt={item.name}
+      style={{ cursor: item.id === 1 ? "pointer" : "default" }}
+      onClick={() => {
+        if (item.id === 1) {  // Only Avakaya
+          navigate(`/product/${item.id}`);
+           }
+      }}
+    />
 
-<h3>{item.name}</h3>
+    {/* HEART ICON */}
+    <span
+      className={`heart ${wishlist[item.id] ? "active" : ""}`}
+      onClick={(e) => {
+        e.stopPropagation(); // Prevents navigating when heart is clicked
+        toggleWishlist(item.id);
+      }}
+    >
+      {wishlist[item.id] ? "❤️" : "♡"}
+    </span>
 
-<p className="desc">{item.desc}</p>
+    <h3>{item.name}</h3>
+    <p className="desc">{item.desc}</p>
 
-<div className="price-row">
-<span className="price">{item.price}</span>
-<span className="old-price">₹{item.oldPrice}</span>
+    <div className="price-row">
+      <span className="price">{item.price}</span>
+      <span className="old-price">₹{item.oldPrice}</span>
 
-<select>
-<option>250g</option>
-<option>500g</option>
-</select>
-</div>
+      <select>
+        <option>250g</option>
+        <option>500g</option>
+      </select>
+    </div>
 
-<button className="cart-btn">
-Add to Cart
-</button>
+    <button
+      className="cart-btn"
+      onClick={(e) => handleAddToCart(e)}
+    >
+      Add to Cart
+    </button>
 
-</div>
+  </div>
 ))}
-
 </div>
 
 </section>
@@ -637,19 +677,19 @@ How hot can you handle? Choose your heat and discover the perfect pickle.
 
 <div className="review">
 <h4>Vedika</h4>
-<p>“The Mango Avakaya reminded me of my grandmother's pickle!”</p>
+<p>“The Mango Avakaya reminded me of my grandmother's pickle!Absolutely austhentic taste.”</p>
 ⭐ ⭐ ⭐ ⭐ ⭐
 </div>
 
 <div className="review">
-<h4>Rahul</h4>
-<p>“Chicken pickle is amazing! Perfect spice level.”</p>
+<h4>Vedika</h4>
+<p>“The Mango Avakaya reminded me of my grandmother's pickle!Absolutely austhentic taste.”</p>
 ⭐ ⭐ ⭐ ⭐ ⭐
 </div>
 
 <div className="review">
-<h4>Anjali</h4>
-<p>“Packaging and taste both are excellent.”</p>
+<h4>Vedika</h4>
+<p>“The Mango Avakaya reminded me of my grandmother's pickle!Absolutely austhentic taste.”</p>
 ⭐ ⭐ ⭐ ⭐ ⭐
 </div>
 
@@ -673,50 +713,12 @@ Never run out of your favourite accompaniments!
 </section>
 
 
-{/* FOOTER */}
-<footer className="footer">
 
-<div className="footer-grid">
-
-<div>
-<img src={logo} className="logo" alt="logo"/>
-<p>
-Bringing you authentic, homemade pickles crafted with love and tradition since 2026.
-</p>
-</div>
-
-<div>
-<h4>Quick</h4>
-<p>About Us</p>
-<p>Veg Pickles</p>
-<p>Non Veg Pickles</p>
-<p>Customized</p>
-<p>Contact Us</p>
-</div>
-
-<div>
-<h4>Policies</h4>
-<p>Shipping Policy</p>
-<p>Return & Refund</p>
-<p>Privacy Policy</p>
-<p>Terms of Services</p>
-</div>
-
-<div>
-<h4>Trust & Safety</h4>
-<p>4.8⭐ Rated by 10,000+ Customers</p>
-<p>Return & 7-Day Replacement Policy</p>
-<p>COD Available</p>
-<p>Secure Payments</p>
-</div>
-
-</div>
-
-<p className="copyright">
-© 2026 Guntur Kaaram. All rights reserved.
-</p>
-
-</footer>
+<SuccessPopup 
+  show={showPopup} 
+  onClose={() => setShowPopup(false)} 
+/>
+<Footer /> 
 
 </div>
 

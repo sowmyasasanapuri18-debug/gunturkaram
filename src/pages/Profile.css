@@ -184,34 +184,6 @@ background:#5f1414;
 }
 
 
-/* FOOTER */
-
-.footer{
-display:flex;
-justify-content:space-between;
-flex-wrap:wrap;
-background:#f3b21b;
-padding:40px;
-margin-top:50px;
-}
-
-.footerCol{
-max-width:250px;
-}
-
-.footerCol h2{
-margin-bottom:10px;
-}
-
-.footerCol h3{
-margin-bottom:10px;
-}
-
-.footerCol p{
-margin:6px 0;
-font-size:14px;
-}
-
 
 /* COPYRIGHT */
 

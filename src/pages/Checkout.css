@@ -159,27 +159,3 @@ cursor:pointer;
 }
 
 
-/* FOOTER */
-
-.footer{
-display:flex;
-justify-content:space-between;
-background:#f2fc32;
-padding:40px;
-margin-top:50px;
-flex-wrap:wrap;
-}
-
-.footerCol{
-max-width:250px;
-}
-
-.footerCol p{
-margin:6px 0;
-}
-
-.copyright{
-text-align:center;
-padding:10px;
-background:#f3b21b;
-}

@@ -3,6 +3,8 @@ import "./Contact.css";
 import logo from "../assets/logo.jpg";
 import contact from "../assets/contact.png";
 import { useNavigate } from "react-router-dom";
+import Footer from "../components/Footer"; 
+
 
 function Contact() {
     const navigate = useNavigate();
@@ -14,10 +16,10 @@ function Contact() {
         <img src={logo} className="logo" alt="logo"/>
 
         <ul className="nav-links">
-          <li>Home</li>
-          <li>About Us</li>
-          <li>Pickles</li>
-          <li>Customized</li>
+          <li onClick={()=>navigate("/Home")}>Home</li>
+          <li onClick={()=>navigate("/about")}>About Us</li>
+          <li onClick={()=>navigate("/Pickles")}>Pickles</li>
+          <li onClick={()=>navigate("/Customized")}>Customized</li>
           <li className="contact-btn">Contact-Us</li>
         </ul>
 
@@ -25,7 +27,7 @@ function Contact() {
           <span onClick={()=>navigate("/cart")}>🛒</span>
           <span onClick={()=>navigate("/wishlist")}>🤍</span>
           
-          <span onClick={()=>navigate("/Notification")}>🔔</span>
+          <span onClick={()=>navigate("/Notifications")}>🔔</span>
           <span onClick={()=>navigate("/Profile")}>👤</span>
         </div>
       </nav>
@@ -94,53 +96,8 @@ function Contact() {
       </div>
 
 
-      {/* ---------- FOOTER ---------- */}
-
-      <div className="footer">
-
-  <div className="footer-section">
-    <img src={logo} className="logo" alt="logo"/>
-    <p>Guntur Kaaram</p>
-    <p>
-      Bringing you authentic, homemade pickles crafted with love and
-      tradition since 2026.
-    </p>
-  </div>
-
-  <div className="footer-section">
-    <h3>Quick</h3>
-    <p>About Us</p>
-    <p>Veg Pickles</p>
-    <p>Non Veg Pickles</p>
-    <p>Customized</p>
-    <p>Contact Us</p>
-  </div>
-
-  <div className="footer-section">
-    <h3>Policies</h3>
-    <p>Shipping Policy</p>
-    <p>Return & Refund</p>
-    <p>Privacy Policy</p>
-    <p>Terms of Services</p>
-    <p>FAQ</p>
-  </div>
-
-  <div className="footer-section">
-    <h3>Trust & Safety</h3>
-    <p>4.8⭐ Rated by 10,000+ Customers</p>
-    <p>Return & 7-Day Replacement</p>
-    <p>COD Available</p>
-    <p>Secure Payments</p>
-    {/* <p>© 2026 Guntur Kaaram . All rights reserved. FSSAI Lic. No. 12345678901234</p> */}
-  </div>
-  <div className="copyright">
-  © 2026 Guntur Kaaram . All rights reserved. FSSAI Lic. No. 12345678901234
-</div>
-  </div>
-{/* <div className="copyright">
-  © 2026 Guntur Kaaram . All rights reserved. FSSAI Lic. No. 12345678901234
-</div> */}
-</div>
+    <Footer />
+    </div>
     
 
   );

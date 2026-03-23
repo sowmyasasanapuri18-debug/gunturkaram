@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Checkout.css";
+import OrderSuccessPopup from "./OrderSuccessPopup";
+import Footer from "../components/Footer"; 
+
+
 
 import logo from "../assets/logo.jpg";
 import mango from "../assets/cart.jpeg";
@@ -8,6 +12,8 @@ import mango from "../assets/cart.jpeg";
 function Checkout() {
 
   const [qty, setQty] = useState(1);
+  const [showPopup, setShowPopup] = useState(false);
+
 
   const price = 90;
   const delivery = 30;
@@ -149,55 +155,29 @@ function Checkout() {
 
       {/* PAY BUTTON */}
 
-      <div className="payBtn">
-        ₹{grandTotal}
-      </div>
+      <div 
+  className="payBtn"
+  onClick={() => {
+    setShowPopup(true);
+
+    // optional auto close
+    setTimeout(() => {
+      setShowPopup(false);
+    }, 2000);
+  }}
+>
+  ₹{grandTotal}
+</div>
 
 
-      {/* FOOTER */}
 
-      <footer className="footer">
+      
+      <OrderSuccessPopup
+  show={showPopup}
+  onClose={() => setShowPopup(false)}
+/>
 
-        <div className="footerCol">
-          <h2>Guntur kaaram</h2>
-          <p>
-            Bringing you authentic, homemade pickles crafted with love
-            and tradition since 2026.
-          </p>
-        </div>
-
-        <div className="footerCol">
-          <h3>Quick</h3>
-          <p>About Us</p>
-          <p>Veg Pickles</p>
-          <p>Non Veg Pickles</p>
-          <p>Customized</p>
-          <p>Contact Us</p>
-        </div>
-
-        <div className="footerCol">
-          <h3>Policies</h3>
-          <p>Shipping Policy</p>
-          <p>Return & Refund</p>
-          <p>Privacy Policy</p>
-          <p>Terms of Services</p>
-          <p>FAQ</p>
-        </div>
-
-        <div className="footerCol">
-          <h3>Trust & Safety</h3>
-          <p>4.8⭐ Rated by 10,000+ Customers</p>
-          <p>Return & 7-Day Replacement</p>
-          <p>COD Available</p>
-          <p>Secure Payments</p>
-        </div>
-
-      </footer>
-
-      <div className="copyright">
-        © 2026 Guntur Kaaram . All rights reserved.
-      </div>
-
+      <Footer /> 
     </div>
   );
 }

@@ -3,6 +3,8 @@ import "./Orders.css";
 import { useNavigate } from "react-router-dom";
 import logo from "../assets/logo.jpg";
 import mango from "../assets/cart.jpeg";
+import Footer from "../components/Footer"; 
+
 
 function Orders() {
     
@@ -131,52 +133,7 @@ Home &gt; Orders
 </div>
 
 
-{/* FOOTER */}
-
-<footer className="footer">
-
-<div className="footer-grid">
-    <img src={logo} className="logo" alt="logo"/>
-
-<div>
-<h2>Guntur kaaram</h2>
-<p>Bringing you authentic, homemade pickles crafted with love and tradition since 2026.</p>
-</div>
-
-
-<div>
-<h3>Quick</h3>
-<p>About Us</p>
-<p>Veg Pickles</p>
-<p>Non Veg Pickles</p>
-<p>Customized</p>
-<p>Contact Us</p>
-</div>
-
-<div>
-<h3>Policies</h3>
-<p>Shipping Policy</p>
-<p>Return & Refund</p>
-<p>Privacy Policy</p>
-<p>Terms of Services</p>
-<p>FAQ</p>
-</div>
-
-<div>
-<h3>Trust & Safety</h3>
-<p>4.8⭐ Rated by 10,000+ Customers</p>
-<p>Return & 7-Day Replacement</p>
-<p>COD Available</p>
-<p>Secure Payments</p>
-<p>© 2026 Guntur Kaaram. All rights reserved. FSSAI Lic. No. 12345678901234</p>
-
-</div>
-
-</div>
-
-
-
-</footer>
+ <Footer /> 
 
 </div>
 );

@@ -189,3 +189,17 @@ border:none;
 border-radius:6px;
 cursor:pointer;
 }
+
+
+
+/* Brand */
+.brand h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.brand p {
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+

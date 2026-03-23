@@ -305,6 +305,8 @@
 
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Footer from "../components/Footer"; 
+
 import "./productdetails.css";
 
 import logo from "../assets/logo.jpg";
@@ -327,10 +329,21 @@ const Productdetails = () => {
   const [selectedSize, setSelectedSize] = useState("200 gm");
 
   const increaseQty = () => setQuantity(quantity + 1);
+   const [added, setAdded] = useState(false);
+   const [addedItems, setAddedItems] = useState({});
+   
+  
+  
 
   const decreaseQty = () => {
     if (quantity > 1) setQuantity(quantity - 1);
   };
+ const handleRelatedCart = (id) => {
+  setAddedItems((prev) => ({
+    ...prev,
+    [id]: !prev[id] // 🔥 toggle true/false
+  }));
+};
 
   return (
     <div className="product-page">
@@ -425,7 +438,7 @@ const Productdetails = () => {
               <span className="slider"></span>
             </label>
 
-            <span className="no-garlic">No garlic</span>
+            
           </div>
 
           {/* CART */}
@@ -438,9 +451,12 @@ const Productdetails = () => {
               <button onClick={increaseQty}>+</button>
             </div>
 
-            <button className="add-cart">
-              Add to Cart
-            </button>
+        <button
+      className={added ? "btn-filled" : "btn-outline"}
+      onClick={() => setAdded(!added)}   // 🔥 toggle
+    >
+      {added ? "🛒 Added to Cart" : "Add to Cart"}
+    </button>
 
           </div>
 
@@ -455,7 +471,7 @@ const Productdetails = () => {
         <h2>Description</h2>
 
         <p>
-          Avakaya Pickle is a traditional and iconic mango pickle from Andhra Pradesh, India.
+          <strong>Avakaya Pickle</strong> is a traditional and iconic mango pickle from Andhra Pradesh, India.
           It is made using raw mango pieces mixed with mustard powder, red chili powder, salt, 
           and gingelly (sesame) oil.The pickle is known for its strong, spicy, and tangy flavor
           that enhances any simple meal.Avakaya is usually prepared during the summer season when
@@ -464,14 +480,17 @@ const Productdetails = () => {
           South Indian households.
         </p>
 
-        <h2>Product Ingredients</h2>
+        <h2 className="title">Product Ingredients</h2>
 
-        <p>What is inside the packet:
-        "Authentic Flavors, Packed with Tradition."
-         Our Mango Avakaya Pickle is made from Ammamma’s cherished Andhra recipe, 
-         delivering the authentic taste of South India straight to your plate. 
-         Here’s what goes inside:
-        </p>
+        <p className="subtitle">What is inside the packet:</p>
+
+         <p className="quote">"Authentic Flavors, Packed with Tradition."</p>
+          
+          <p>
+        Our Mango Avakaya Pickle is made from Ammamma’s cherished Andhra recipe,
+        delivering the authentic taste of South India straight to your plate.
+        Here’s what goes inside:
+      </p>
 
         <ul>
           <li> 🥭 Raw Mangoes: Fresh and tangy, packed with Vitamin C and niacin for an immunity boost.</li>
@@ -481,11 +500,15 @@ const Productdetails = () => {
           <li>🥥 Homemade Sesame Oil: Adds a rich, nutty taste and keeps the pickle fresh and flavorful.</li>
         </ul>
 
-        <h2>Shelf Life</h2>
+         <h2 className="title">Shelf Life:</h2>
 
         <p>
           3–4 months when stored in a cool dry place away from sunlight.
         </p>
+
+        <p className="footer-text">
+        Enjoy the authentic taste of Andhra with every spoonful of our Mango Avakaya Pickle!
+      </p>
 
       </div>
 
@@ -527,85 +550,62 @@ const Productdetails = () => {
 
         <div className="products">
 
-          <div className="card">
-            <img src={p1} alt="Avakaya Pickle" />
-            <h4>Avakaya Pickle</h4>
-            <p>₹350</p>
-            <button>Add to Cart</button>
-          </div>
+  <div className="card">
+    <img src={p1} alt="Avakaya Pickle" />
+    <h4>Avakaya Pickle</h4>
+    
+    
+    <span className="new">₹350</span>
+            
+    <button
+      className={addedItems[1] ? "added-btn" : ""}
+      onClick={() => handleRelatedCart(1)}
+    >
+      {addedItems[1] ? "🛒Added to Cart" : "Add to Cart"}
+    </button>
+  </div>
 
-          <div className="card">
-            <img src={p2} alt="Gongura Pickle" />
-            <h4>Gongura Pickle</h4>
-            <p>₹350</p>
-            <button>Add to Cart</button>
-          </div>
+  <div className="card">
+    <img src={p2} alt="Gongura Pickle" />
+    <h4>Gongura Pickle</h4>
+    <p>₹350</p>
+    <button
+      className={addedItems[2] ? "added-btn" : ""}
+      onClick={() => handleRelatedCart(2)}
+    >
+      {addedItems[2] ? "🛒Added to Cart" : "Add to Cart"}
+    </button>
+  </div>
 
-          <div className="card">
-            <img src={p3} alt="Chicken Pickle" />
-            <h4>Chicken Pickle</h4>
-            <p>₹350</p>
-            <button>Add to Cart</button>
-          </div>
+  <div className="card">
+    <img src={p3} alt="Chicken Pickle" />
+    <h4>Chicken Pickle</h4>
+    <p>₹350</p>
+    <button
+      className={addedItems[3] ? "added-btn" : ""}
+      onClick={() => handleRelatedCart(3)}
+    >
+      {addedItems[3] ? "🛒Added to Cart" : "Add to Cart"}
+    </button>
+  </div>
 
-          <div className="card">
-            <img src={p4} alt="Prawn Pickle" />
-            <h4>Prawn Pickle</h4>
-            <p>₹350</p>
-            <button>Add to Cart</button>
-          </div>
+  <div className="card">
+    <img src={p4} alt="Prawn Pickle" />
+    <h4>Prawn Pickle</h4>
+    <p>₹350</p>
+    <button
+      className={addedItems[4] ? "added-btn" : ""}
+      onClick={() => handleRelatedCart(4)}
+    >
+      {addedItems[4] ? "🛒Added to Cart" : "Add to Cart"}
+    </button>
+  </div>
 
-        </div>
+</div>
 
-      </div>
+      <Footer /> 
 
-      {/* FOOTER */}
-
-      <footer className="footer">
-
-        <div className="footer-grid">
-
-          <div>
-            <img src={logo} className="logo" alt="logo" />
-            <p>
-              Bringing you authentic homemade pickles crafted with love
-              and tradition since 2026.
-            </p>
-          </div>
-
-          <div>
-            <h4>Quick</h4>
-            <p>About Us</p>
-            <p>Veg Pickles</p>
-            <p>Non Veg Pickles</p>
-            <p>Customized</p>
-            <p>Contact Us</p>
-          </div>
-
-          <div>
-            <h4>Policies</h4>
-            <p>Shipping Policy</p>
-            <p>Return & Refund</p>
-            <p>Privacy Policy</p>
-            <p>Terms of Services</p>
-          </div>
-
-          <div>
-            <h4>Trust & Safety</h4>
-            <p>4.8⭐ Rated by 10,000+ Customers</p>
-            <p>Return & 7-Day Replacement</p>
-            <p>COD Available</p>
-            <p>Secure Payments</p>
-          </div>
-
-        </div>
-
-        <p className="copyright">
-          © 2026 Guntur Kaaram. All rights reserved.
-        </p>
-
-      </footer>
-
+    </div>
     </div>
   );
 };

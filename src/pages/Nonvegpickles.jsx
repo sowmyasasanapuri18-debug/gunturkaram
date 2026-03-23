@@ -1,6 +1,10 @@
-import React from "react";
+
+import React, { useState } from "react";
+
 import { useNavigate } from "react-router-dom";
 import "./Nonvegpickles.css";
+import Footer from "../components/Footer"; 
+
 
 import hero from "../assets/pickle1.jpeg";
 import pickle from "../assets/pickle.jpg";
@@ -8,27 +12,50 @@ import logo from "../assets/logo.jpg";
 
 const Nonvegpickles = () => {
   const navigate = useNavigate();
+  const [likedItems, setLikedItems] = useState({});
+  const [cartItems, setCartItems] = useState({});
   
+  const toggleLike = (id) => {
+  setLikedItems((prev) => ({
+    ...prev,
+    [id]: !prev[id],
+  }));
+};
+
+const addToCart = (id) => {
+  setCartItems((prev) => ({
+    ...prev,
+    [id]: !prev[id], // ✅ toggle true/false
+  }));
+};
 
 const products = [
 {
+  id: 1,
 name:"Boneless Chicken Pickle",
 price:350,
+oldprice:400,
 img:pickle
 },
 {
+  id: 2,
 name:"Chicken Ginger Pickle",
 price:350,
+oldprice:400,
 img:pickle
 },
 {
+  id: 3,
 name:"Chicken Gongura Pickle",
 price:350,
+oldprice:400,
 img:pickle
 },
 {
+  id: 4,
 name:"Spice Chicken Pickle",
 price:350,
+oldprice:400,
 img:pickle
 }
 ];
@@ -46,7 +73,7 @@ return (
 <li>Home</li>
 <li>About Us</li>
 <li className="active">Pickles</li>
-<li>Customized</li>
+<li onClick={()=>navigate("/Customized")}>Customized</li>
 <li>Contact Us</li>
 </ul>
 
@@ -83,8 +110,10 @@ From tangy mango to fiery prawns.
 <div className="pickles-section">
 
 <div className="pickles-header">
-
+<div>
 <h2>🍗 Non Veg Pickles</h2>
+<p> 15 items found</p>
+</div>
 
 <div className="toggle">
 
@@ -169,9 +198,21 @@ Sun-cured raw mango pieces blended with traditional spices.
 <div className="price">
 ₹{item.price}
 </div>
+<span
+  className={`heart-icon ${likedItems[item.id] ? "active" : ""}`}
+  onClick={() => toggleLike(item.id)}
+>
+  ♥
+</span>
 
-<button className="cart-btn">
-Add to Cart
+<button
+  className={`cart-btn ${cartItems[index] ? "added" : ""}`}
+  onClick={(e) => {
+    e.stopPropagation();
+    addToCart(index);
+  }}
+>
+  {cartItems[index] ? "Added to Cart 🛒" : "Add to Cart"}
 </button>
 
 </div>
@@ -187,73 +228,7 @@ Add to Cart
 
 
  
-{/* FOOTER */}
-
-<footer className="footer">
-
-<div className="footer-grid">
-
-<div>
-
-<h3>Guntur Kaaram</h3>
-
-<p>
-Bringing you authentic, homemade pickles
-crafted with love and tradition since 2026.
-</p>
-
-<img src={logo} className="footer-logo" alt="logo"/>
-
-</div>
-
-
-<div>
-
-<h4>Quick</h4>
-
-<p>About Us</p>
-<p>Veg Pickles</p>
-<p>Non Veg Pickles</p>
-<p>Customized</p>
-<p>Contact Us</p>
-
-</div>
-
-
-<div>
-
-<h4>Policies</h4>
-
-<p>Shipping Policy</p>
-<p>Return & Refund</p>
-<p>Privacy Policy</p>
-<p>Terms of Services</p>
-<p>FAQ</p>
-
-</div>
-
-
-<div>
-
-<h4>Trust & Safety</h4>
-
-<p>4.8★ Rated by 10,000+ Customers</p>
-<p>Return 7-Day Replacement</p>
-<p>Policy Refund</p>
-<p>COD Available</p>
-<p>Secure Payments</p>
-
-</div>
-
-</div>
-
-<div className="copyright">
-
-© 2026 Guntur Kaaram. All rights reserved.
-
-</div>
-
-</footer>
+<Footer /> 
 
 </div>
 );

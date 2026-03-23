@@ -60,6 +60,8 @@ text-align:center;
 color:white;
 }
 
+
+
 .hero h1{
 font-size:48px;
 margin-bottom:10px;
@@ -218,22 +220,6 @@ border-radius:12px;
 }
 
 
-/* FOOTER */
-
-.footer{
-background:#f1c232;
-padding:50px 80px;
-}
-
-.footer-grid{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:40px;
-}
-
-.footer h4{
-margin-bottom:10px;
-}
 
 .copyright{
 text-align:center;

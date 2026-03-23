@@ -1,0 +1,64 @@
+.footer {
+  background: #f4c430; /* yellow */
+  padding: 40px 60px 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Layout */
+.footer-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 40px;
+}
+
+/* Columns */
+.footer-col h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #5a2d0c;
+}
+
+.footer-col p {
+  margin: 8px 0;
+  cursor: pointer;
+  color: #333;
+}
+
+/* Brand */
+.brand h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.brand p {
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+/* Logo */
+.footer-logo {
+  width: 160px;
+  margin-top: 10px;
+}
+
+/* Bottom */
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(0,0,0,0.2);
+  font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+}

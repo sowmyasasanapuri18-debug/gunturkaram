@@ -1,6 +1,8 @@
 import React from "react";
 import "./PrivacyPolicy.css";
 import { useNavigate } from "react-router-dom";
+import Footer from "../components/Footer"; 
+
 import logo from "../assets/logo.jpg";
 
 function PrivacyPolicy() {
@@ -93,56 +95,7 @@ function PrivacyPolicy() {
       </div>
 
 
-      {/* FOOTER */}
-
-      <footer className="footer">
-
-        <div className="footer-container">
-
-          <div className="footer-col">
-            <h2>Guntur kaaram</h2>
-            <p>
-              Bringing you authentic, homemade pickles crafted with love
-              and tradition since 2026.
-            </p>
-
-            <img src={logo} alt="logo" className="footer-logo"/>
-          </div>
-
-          <div className="footer-col">
-            <h3>Quick</h3>
-            <p>About Us</p>
-            <p>Veg Pickles</p>
-            <p>Non Veg Pickles</p>
-            <p>Customized</p>
-            <p>Contact Us</p>
-          </div>
-
-          <div className="footer-col">
-            <h3>Policies</h3>
-            <p>Shipping Policy</p>
-            <p>Return & Refund</p>
-            <p>Privacy Policy</p>
-            <p>Terms of Services</p>
-            <p>FAQ</p>
-          </div>
-
-          <div className="footer-col">
-            <h3>Trust & Safety</h3>
-            <p>⭐ 4.8 Rated by 10,000+ Customers</p>
-            <p>Return & 7-Day Replacement Policy Refund</p>
-            <p>COD Available</p>
-            <p>Terms of Services</p>
-            <p>Secure Payments</p>
-          </div>
-
-        </div>
-
-        <div className="copyright">
-          © 2026 Guntur Kaaram . All rights reserved. FSSAI Lic. No. 12345678901234
-        </div>
-
-      </footer>
+    <Footer />
 
     </div>
   );

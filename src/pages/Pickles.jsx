@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Pickles.css";
+import Footer from "../components/Footer"; 
+
 
 import hero from "../assets/pickle1.jpeg";
 import pickle from "../assets/pickle.jpg";
@@ -10,6 +12,24 @@ function Pickles() {
 
 const navigate = useNavigate();
 const [category,setCategory] = useState("veg");
+const [likedItems, setLikedItems] = useState({});
+const [cartItems, setCartItems] = useState({});
+
+const toggleLike = (id) => {
+  setLikedItems((prev) => ({
+    ...prev,
+    [id]: !prev[id],
+  }));
+};
+
+const addToCart = (id) => {
+  setCartItems((prev) => ({
+    ...prev,
+    [id]: !prev[id], // ✅ toggle true/false
+  }));
+};
+
+
 
 const products = [
 {
@@ -56,7 +76,7 @@ return (
 
 <ul className="nav-links">
 <li>Home</li>
-<li>About Us</li>
+<li onClick={()=>navigate("/about")}>About Us</li>
 <li onClick={()=>navigate("/pickles")}>Pickles</li>
 <li onClick={()=>navigate("/Customized")}>Customized</li>
 <li>Contact Us</li>
@@ -166,17 +186,20 @@ Non Veg
 
 {filteredProducts.map((item,index)=>(
 
-<div
-className="product-card"
-key={index}
-onClick={() => navigate("/product/avakaya")}
->
+<div className="product-card">
+
 
 <div className="image-box">
 
 <img src={item.image} alt="pickle"/>
 
-<span className="wishlist">♡</span>
+<span
+  className={`heart-icon ${likedItems[index] ? "active" : ""}`}
+  onClick={() => toggleLike(index)}
+>
+  ♥
+</span>
+
 
 </div>
 
@@ -196,13 +219,15 @@ onClick={() => navigate("/product/avakaya")}
 </div>
 
 <button
-className="cart-btn"
-onClick={(e)=>{
-e.stopPropagation();
-}}
+  className={`cart-btn ${cartItems[index] ? "added" : ""}`}
+  onClick={(e) => {
+    e.stopPropagation();
+    addToCart(index);
+  }}
 >
-Add to Cart
+  {cartItems[index] ? "Added to Cart 🛒" : "Add to Cart"}
 </button>
+
 
 </div>
 
@@ -212,59 +237,8 @@ Add to Cart
 
 </div>
 
+   <Footer />
 
-{/* FOOTER */}
-
-<footer className="footer">
-
-<div className="footer-grid">
-
-<div>
-
-<img src={logo} className="logo" alt="logo"/>
-
-<p>
-Bringing you authentic, homemade pickles crafted with love and tradition since 2026.
-</p>
-
-</div>
-
-
-<div>
-<h4>Quick</h4>
-<p>About Us</p>
-<p>Veg Pickles</p>
-<p>Non Veg Pickles</p>
-<p>Customized</p>
-<p>Contact Us</p>
-</div>
-
-
-<div>
-<h4>Policies</h4>
-<p>Shipping Policy</p>
-<p>Return & Refund</p>
-<p>Privacy Policy</p>
-<p>Terms of Services</p>
-</div>
-
-
-<div>
-<h4>Trust & Safety</h4>
-<p>4.8⭐ Rated by 10,000+ Customers</p>
-<p>Return & 7-Day Replacement Policy</p>
-<p>COD Available</p>
-<p>Secure Payments</p>
-</div>
-
-</div>
-
-
-<p className="copyright">
-© 2026 Guntur Kaaram. All rights reserved. FSSAI Lic. No. 12345678901234
-</p>
-
-</footer>
 
 
 </div>

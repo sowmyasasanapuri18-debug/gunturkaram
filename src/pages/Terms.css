@@ -82,43 +82,4 @@ line-height:1.6;
 margin-top:5px;
 }
 
-/* Footer */
 
-.footer{
-background:#f4c23c;
-margin-top:40px;
-padding-top:40px;
-}
-
-.footer-container{
-display:flex;
-justify-content:space-around;
-padding:0 80px;
-}
-
-.footer-col{
-width:250px;
-}
-
-.footer-col h2{
-margin-bottom:10px;
-}
-
-.footer-col h3{
-margin-bottom:10px;
-}
-
-.footer-col p{
-margin:6px 0;
-}
-
-.footer-logo{
-width:180px;
-margin-top:10px;
-}
-
-.copyright{
-text-align:center;
-padding:20px;
-font-size:14px;
-}
