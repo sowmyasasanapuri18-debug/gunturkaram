@@ -1,150 +1,38 @@
-/* =========================
-   Global Reset
-   ========================= */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-html, body {
-  min-height: 100%;
-  overflow-x: hidden;
-  overflow-y: auto;
-  background: #fafafa;
-}
-
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-/* =========================
-   Root + Cart Containers
-   ========================= */
-#root {
-  width: 100%;
-}
-
+/* Main container */
 .cart {
-  width: 100%;
+  padding: 20px;
+  background: #f5f6fa;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
 }
 
+/* Layout */
 .cartContainer {
   display: flex;
-  gap: 30px;
-  padding: 40px;
-}
-
-@media (max-width: 768px) {
-  .cartContainer {
-    flex-direction: column;
-    padding: 20px;
-  }
-}
-
-/* =========================
-   Navbar
-   ========================= */
-.navbar {
-  display: flex;
+  gap: 20px;
   justify-content: space-between;
-  align-items: center;
-  padding: 15px 40px;
-  background: #fff;
-  border-bottom: 1px solid #eee;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
 }
 
-/* Logo image inside navbar */
-.navbar img {
-  height: 50px;   /* adjust size here */
-  width: auto;
-  object-fit: contain;
-  cursor: pointer;
-}
-
-/* Navigation Links */
-.navLinks {
-  display: flex;
-  gap: 30px;
-  list-style: none;
-}
-
-.navLinks li {
-  cursor: pointer;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-.navLinks li:hover {
-  color: #c62828;
-}
-
-/* Navigation Icons */
-.navIcons {
-  display: flex;
-  align-items: center;
-}
-
-.navIcons span {
-  margin-left: 15px;
-  font-size: 18px;
-  cursor: pointer;
-  transition: color 0.3s ease;
-}
-
-.navIcons span:hover {
-  color: #f4a825;
-}
-
-@media (max-width: 768px) {
-  .navbar {
-    flex-wrap: wrap;
-    padding: 10px 20px;
-  }
-
-  .navLinks {
-    width: 100%;
-    justify-content: center;
-    margin-top: 10px;
-  }
-
-  .navIcons {
-    width: 100%;
-    justify-content: center;
-    margin-top: 10px;
-  }
-}
-
-/* =========================
-   Right Section
-   ========================= */
+/* Left Section */
 .leftSection {
-  flex: 1;
-}
-
-.rightSection {
-  flex: 1;
-  background: #fff;
-  padding: 25px;
-  border-radius: 10px;
-  border: 1px solid #eee;
-}
-
-/* =========================
-   Coupon Box
-   ========================= */
-.couponBox {
+  flex: 2;
   background: #fff;
   padding: 20px;
   border-radius: 10px;
-  border: 1px solid #eee;
+}
+
+.leftSection h2 {
+  margin-bottom: 15px;
+}
+
+/* Coupon Box */
+.couponBox {
   margin-bottom: 20px;
+}
+
+.couponBox p {
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
 .couponInput {
@@ -155,62 +43,83 @@ body {
 .couponInput input {
   flex: 1;
   padding: 10px;
-  border: 1px solid #ddd;
+  border: 1px solid #ccc;
   border-radius: 5px;
 }
 
 .couponInput button {
-  background: #8d2b23;
+  padding: 10px 15px;
+  background: #7b1e1e;
   color: #fff;
   border: none;
-  padding: 10px 15px;
   border-radius: 5px;
   cursor: pointer;
 }
 
-/* =========================
-   Address Box
-   ========================= */
+.couponInput button:hover {
+  background: #7b1e1e;
+}
+
+/* Address Box */
 .addressBox {
-  background: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  border: 1px solid #eee;
+  margin-top: 20px;
+}
+
+.addressHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.newAddress {
+  color: #7b1e1e;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.addressBox label {
+  display: block;
+  margin-top: 10px;
+  font-size: 14px;
 }
 
 .addressBox input,
 .addressBox textarea {
   width: 100%;
   padding: 10px;
-  margin: 8px 0 15px;
-  border: 1px solid #ddd;
+  margin-top: 5px;
+  border: 1px solid #ccc;
   border-radius: 5px;
 }
 
-.addressHeader {
-  display: flex;
-  justify-content: space-between;
-}
-
-.newAddress {
-  color: #8d2b23;
-  cursor: pointer;
-}
-
 .submitBtn {
-  width: 100%;
-  background: #8d2b23;
-  color: #fff;
+  margin-top: 15px;
+  padding: 10px;
+  background: #7b1e1e;
+  color: white;
   border: none;
-  padding: 12px;
-  border-radius: 6px;
-  font-size: 16px;
+  border-radius: 5px;
   cursor: pointer;
 }
 
-/* =========================
-   Product Section
-   ========================= */
+.submitBtn:hover {
+  background: #7b1e1e;
+}
+
+/* Right Section */
+.rightSection {
+  flex: 1;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  height: fit-content;
+}
+
+.rightSection h3 {
+  margin-bottom: 15px;
+}
+
+/* Product */
 .product {
   display: flex;
   align-items: center;
@@ -220,14 +129,21 @@ body {
 .product img {
   width: 70px;
   height: 70px;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
-.productInfo {
-  flex: 1;
+.productInfo h4 {
+  margin: 0;
 }
 
+.productInfo p {
+  margin: 2px 0;
+  font-size: 14px;
+}
+
+/* Quantity */
 .qtyBox {
+  margin-left: auto;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -237,16 +153,21 @@ body {
   width: 30px;
   height: 30px;
   border: none;
-  background: #8d2b23;
-  color: #fff;
-  border-radius: 50%;
+  background: #ddd;
+  border-radius: 5px;
   cursor: pointer;
 }
 
+.qtyBox span {
+  min-width: 20px;
+  text-align: center;
+}
+
+/* Pricing */
 .priceRow {
   display: flex;
   justify-content: space-between;
-  margin: 12px 0;
+  margin: 10px 0;
 }
 
 .grand {
@@ -254,30 +175,44 @@ body {
   font-size: 18px;
 }
 
+/* Button */
 .placeOrder {
   width: 100%;
   padding: 12px;
-  background: #8d2b23;
-  color: #fff;
+  background: #7b1e1e;
+  color: white;
   border: none;
   border-radius: 8px;
-  margin-top: 10px;
-  font-size: 16px;
+  margin-top: 15px;
   cursor: pointer;
+  font-size: 16px;
 }
 
+.placeOrder:hover {
+  background:#7b1e1e;
+}
+
+/* Note */
 .note {
-  text-align: center;
-  font-size: 13px;
-  color: #777;
-  margin-top: 8px;
-}
-
-.secure {
-  text-align: center;
+  font-size: 12px;
+  color: gray;
   margin-top: 10px;
-  color: green;
 }
 
+/* Secure */
+.secure {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #7b1e1e;
+}
 
+/* Responsive */
+@media (max-width: 768px) {
+  .cartContainer {
+    flex-direction: column;
+  }
 
+  .rightSection {
+    margin-top: 20px;
+  }
+}

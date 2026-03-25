@@ -1,10 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
+
 import "./Notifications.css";
 import Footer from "../components/Footer"; 
+import Navbar from "../components/Navbar";
 
 
-import logo from "../assets/logo.jpg";
+
 import truck from "../assets/truck.png";
 import holi from "../assets/holi.png";
 
@@ -24,34 +25,11 @@ function Notifications() {
       date: "4 March"
     }
   ];
-
+<Navbar />
   return (
     <div>
 
-      {/* NAVBAR */}
-      <nav className="navbar">
-
-        <div className="logo">
-          <img src={logo} alt="logo"/>
-        </div>
-
-        <ul className="navLinks">
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/about">About Us</Link></li>
-          <li><Link to="/pickles">Pickles</Link></li>
-          <li><Link to="/customized">Customized</Link></li>
-          <li><Link to="/contact Us">Contact Us</Link></li>
-        </ul>
-
-        <div className="navIcons">
-          <Link to="/cart">🛒</Link>
-          <Link to="/wishlist">❤️</Link>
-          <Link to="/notifications">🔔</Link>
-          <Link to="/profile">👤</Link>
-        </div>
-
-      </nav>
-
+      
 
       {/* PAGE TITLE */}
       <div className="notificationContainer">

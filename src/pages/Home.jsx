@@ -390,12 +390,13 @@
 import React, { useState } from "react";
 import SuccessPopup from "./SuccessPopup";
 import Footer from "../components/Footer"; 
+import Navbar from "../components/Navbar";
 
 
 import { useNavigate } from "react-router-dom";
 import "./Home.css";
 
-import logo from "../assets/logo.jpg";
+
 import heroImg from "../assets/hero.jpg";
 
 import avakaya from "../assets/pickle.jpg";
@@ -411,11 +412,15 @@ import sunDrying from "../assets/sundrying.jpg";
 import marination from "../assets/marination.jpg";
 import packing from "../assets/packing.jpg";
 
+
 function Home() {
 
 const navigate = useNavigate();
 const [showPopup, setShowPopup] = useState(false);
 const [wishlist, setWishlist] = useState({});
+
+
+
 
 const handleAddToCart = (e) => {
   e.stopPropagation(); // IMPORTANT: stops navigation
@@ -432,7 +437,7 @@ const toggleWishlist = (id) => {
   }));
 };
 
-
+<Navbar />
 /* PRODUCTS WITH ID (FIXED) */
 const products = [
 {
@@ -484,24 +489,7 @@ return (
 
 <div>
 
-{/* NAVBAR */}
-<nav className="navbar">
 
-<img src={logo} className="logo" alt="logo" />
-
-<ul className="nav-links">
-<li onClick={()=>navigate("/")}>Home</li>
-<li onClick={()=>navigate("/about")}>About Us</li>
-<li>Pickles</li>
-<li>Customized</li>
-<li>Contact Us</li>
-</ul>
-
-<button className="login-btn" onClick={() => navigate("/login")}>
-Log In / Sign Up
-</button>
-
-</nav>
 
 
 {/* HERO */}
@@ -535,12 +523,12 @@ onClick={() => navigate("/pickles")}
 Veg / Non Veg Pickles
 </button>
 
-<button
+{/* <button
 className="outline-btn"
 onClick={() => navigate("/customized")}
 >
 Customized Pickles
-</button>
+</button> */}
 
 </div>
 
@@ -569,28 +557,24 @@ Customized Pickles
 {products.map((item) => (
   <div className="card" key={item.id}>
 
-    {/* IMAGE CLICK */}
-    <img
-       src={item.image}
-      alt={item.name}
-      style={{ cursor: item.id === 1 ? "pointer" : "default" }}
-      onClick={() => {
-        if (item.id === 1) {  // Only Avakaya
-          navigate(`/product/${item.id}`);
-           }
-      }}
-    />
+   <div className="img-box">
+  <img
+  src={item.image}
+  alt={item.name}
+  style={{ cursor: "pointer" }}
+  onClick={() => navigate("/product/1", { stat1e: item })}
+/>
 
-    {/* HEART ICON */}
-    <span
-      className={`heart ${wishlist[item.id] ? "active" : ""}`}
-      onClick={(e) => {
-        e.stopPropagation(); // Prevents navigating when heart is clicked
-        toggleWishlist(item.id);
-      }}
-    >
-      {wishlist[item.id] ? "❤️" : "♡"}
-    </span>
+  <span
+    className={`heart ${wishlist[item.id] ? "active" : ""}`}
+    onClick={(e) => {
+      e.stopPropagation();
+      toggleWishlist(item.id);
+    }}
+  >
+    {wishlist[item.id] ? "❤️" : "♡"}
+  </span>
+</div>
 
     <h3>{item.name}</h3>
     <p className="desc">{item.desc}</p>
@@ -602,6 +586,7 @@ Customized Pickles
       <select>
         <option>250g</option>
         <option>500g</option>
+        <option>1Kg</option>
       </select>
     </div>
 
@@ -718,7 +703,9 @@ Never run out of your favourite accompaniments!
   show={showPopup} 
   onClose={() => setShowPopup(false)} 
 />
+
 <Footer /> 
+
 
 </div>
 

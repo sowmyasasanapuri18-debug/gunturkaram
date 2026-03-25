@@ -4,9 +4,12 @@ import "./Pickles.css";
 import Footer from "../components/Footer"; 
 
 
+
+
+
 import hero from "../assets/pickle1.jpeg";
 import pickle from "../assets/pickle.jpg";
-import logo from "../assets/logo.jpg";
+
 
 function Pickles() {
 
@@ -14,6 +17,7 @@ const navigate = useNavigate();
 const [category,setCategory] = useState("veg");
 const [likedItems, setLikedItems] = useState({});
 const [cartItems, setCartItems] = useState({});
+
 
 const toggleLike = (id) => {
   setLikedItems((prev) => ({
@@ -35,6 +39,7 @@ const products = [
 {
 name:"Avakaya Pickle",
 price:"₹350",
+oldprice: "400",
 desc:"Sun-cured raw mango pieces blended with traditional spices and cold-pressed oil for a bold flavour.",
 type:"veg",
 image:pickle
@@ -42,21 +47,24 @@ image:pickle
 {
 name:"Allam Mango Pickle",
 price:"₹350",
-desc:"Raw mango blended with ginger and traditional Andhra spices.",
+oldprice: "400",
+desc:"Sun-cured raw mango pieces blended with traditional spices and cold-pressed oil for a bold flavour.",
 type:"veg",
 image:pickle
 },
 {
 name:"Sweet Mango Pickle",
 price:"₹350",
-desc:"Sweet tangy mango pickle made using authentic ingredients.",
+oldprice: "400",
+desc:"Sun-cured raw mango pieces blended with traditional spices and cold-pressed oil for a bold flavour.",
 type:"veg",
 image:pickle
 },
 {
 name:"Spice Mango Pickle",
 price:"₹350",
-desc:"Traditional spicy Andhra mango pickle.",
+oldprice: "400",
+desc:"Sun-cured raw mango pieces blended with traditional spices and cold-pressed oil for a bold flavour.",
 type:"veg",
 image:pickle
 },
@@ -68,23 +76,7 @@ return (
 
 <div className="pickles-page">
 
-{/* NAVBAR */}
 
-<nav className="navbar">
-
-<img src={logo} className="logo" alt="logo" />
-
-<ul className="nav-links">
-<li>Home</li>
-<li onClick={()=>navigate("/about")}>About Us</li>
-<li onClick={()=>navigate("/pickles")}>Pickles</li>
-<li onClick={()=>navigate("/Customized")}>Customized</li>
-<li>Contact Us</li>
-</ul>
-
-<button className="login-btn">Log In / Sign Up</button>
-
-</nav>
 
 
 {/* hero */}
@@ -209,11 +201,16 @@ Non Veg
 
 <div className="price-row">
 
-<span className="price">{item.price}</span>
+<div className="price">
+                    {item.price}
+                    <span className="old-price"> ₹{item.oldprice}</span>
+                  </div>
+
 
 <select>
 <option>250 Grams</option>
 <option>500 Grams</option>
+<option>1 Kg</option>
 </select>
 
 </div>

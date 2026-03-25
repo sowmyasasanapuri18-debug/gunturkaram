@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+
 import { useNavigate } from "react-router-dom";
 import "./Profile.css";
 import ProfileSuccessPopup from "./ProfileSuccessPopup";
 import Footer from "../components/Footer"; 
+import Navbar from "../components/Navbar";
 
 
 
-import logo from "../assets/logo.jpg";
 
 function Profile() {
     const navigate = useNavigate();
@@ -29,35 +29,11 @@ function Profile() {
       [e.target.name]: e.target.value
     });
   };
-
+<Navbar />
   return (
     <div>
 
-      {/* NAVBAR */}
-      <nav className="navbar">
-
-        <div className="logo">
-          <img src={logo} alt="logo"/>
-        </div>
-
-        <ul className="navLinks">
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/about">About Us</Link></li>
-          <li><Link to="/pickles">Pickles</Link></li>
-          <li><Link to="/customized">Customized</Link></li>
-          
-          <li><Link to="/contact-us">contact us</Link></li>
-        </ul>
-
-        <div className="navIcons">
-          <Link to="/cart">🛒</Link>
-          <Link to="/wishlist">❤️</Link>
-          <Link to="/Notifications">🔔</Link>
-         
-          <Link to="/profile">👤</Link>
-        </div>
-
-      </nav>
+     
 
 
       {/* BREADCRUMB */}

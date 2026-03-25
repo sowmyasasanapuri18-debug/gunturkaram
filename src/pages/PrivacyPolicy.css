@@ -100,3 +100,72 @@ text-align:center;
 padding:20px;
 font-size:14px;
 }
+
+
+
+
+/* ========================= */
+/* 📱 MOBILE RESPONSIVE */
+/* ========================= */
+
+@media (max-width: 768px) {
+
+  /* BREADCRUMB */
+  .breadcrumb {
+    padding: 15px 20px;
+    font-size: 14px;
+  }
+
+  /* MAIN LAYOUT */
+  .privacy-container {
+    flex-direction: column;
+    padding: 15px 20px;
+  }
+
+  /* SIDEBAR */
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .menu-item {
+    flex: 0 0 auto;
+    padding: 10px 15px;
+    font-size: 14px;
+    white-space: nowrap;
+  }
+
+  .logout-btn {
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  /* POLICY CONTENT */
+  .policy-content {
+    padding: 20px;
+  }
+
+  .policy-content h2 {
+    font-size: 20px;
+  }
+
+  .policy-content h3 {
+    font-size: 16px;
+  }
+
+  .policy-content p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* COPYRIGHT */
+  .copyright {
+    padding: 15px;
+    font-size: 12px;
+  }
+
+}

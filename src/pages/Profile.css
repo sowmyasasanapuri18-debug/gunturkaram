@@ -185,12 +185,105 @@ background:#5f1414;
 
 
 
-/* COPYRIGHT */
 
-.copyright{
-text-align:center;
-background:#f3b21b;
-padding:10px;
-border-top:1px solid rgba(0,0,0,0.1);
-font-size:14px;
+
+/* ========================= */
+/* 📱 MOBILE RESPONSIVE */
+/* ========================= */
+
+@media (max-width: 768px) {
+
+  /* NAVBAR */
+  .navbar {
+    padding: 10px 20px;
+  }
+
+  .navLinks {
+    display: none; /* hide links for mobile (optional) */
+  }
+
+  .logo img {
+    height: 45px;
+  }
+
+  .navIcons {
+    gap: 15px;
+    font-size: 18px;
+  }
+
+  /* BREADCRUMB */
+  .breadcrumb {
+    padding: 15px 20px;
+    font-size: 14px;
+  }
+
+  /* MAIN LAYOUT */
+  .profileContainer {
+    flex-direction: column;
+    padding: 0 20px 20px 20px;
+  }
+
+  /* SIDEBAR */
+  .profileMenu {
+    width: 100%;
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .menuItem {
+    flex: 0 0 auto;
+    padding: 10px 15px;
+    font-size: 14px;
+    white-space: nowrap;
+  }
+
+  /* LOGOUT BUTTON */
+  .logoutBtn {
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  /* FORM */
+  .profileForm {
+    padding: 20px;
+  }
+
+  .profileForm h2 {
+    font-size: 20px;
+  }
+
+  .profileForm input {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  /* ROW → STACK */
+  .row {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  /* BUTTON */
+  .updateBtn {
+    padding: 12px;
+    font-size: 16px;
+  }
+
+  /* COPYRIGHT */
+  .copyright {
+    font-size: 12px;
+    padding: 8px;
+  }
+
 }
+
+
+
+
+
+
+
+

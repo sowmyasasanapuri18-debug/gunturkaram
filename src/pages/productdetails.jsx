@@ -304,12 +304,12 @@
 
 
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import Footer from "../components/Footer"; 
 
+import Footer from "../components/Footer"; 
+ 
 import "./productdetails.css";
 
-import logo from "../assets/logo.jpg";
+
 import mainImg from "../assets/Mango.png";
 import thumb1 from "../assets/thumb1.png";
 import thumb2 from "../assets/thumb2.png";
@@ -323,7 +323,7 @@ import p4 from "../assets/pickle.jpg";
 
 const Productdetails = () => {
 
-  const navigate = useNavigate();
+  
 
   const [quantity, setQuantity] = useState(1);
   const [selectedSize, setSelectedSize] = useState("200 gm");
@@ -331,6 +331,7 @@ const Productdetails = () => {
   const increaseQty = () => setQuantity(quantity + 1);
    const [added, setAdded] = useState(false);
    const [addedItems, setAddedItems] = useState({});
+   
    
   
   
@@ -347,22 +348,8 @@ const Productdetails = () => {
 
   return (
     <div className="product-page">
-
-      {/* NAVBAR */}
-
-      <nav className="navbar">
-        <img src={logo} className="logo" alt="logo" />
-
-        <ul className="nav-links">
-          <li onClick={() => navigate("/")}>Home</li>
-          <li>About Us</li>
-          <li onClick={() => navigate("/pickles")}>Pickles</li>
-          <li onClick={() => navigate("/Customized")}>Customized</li>
-          <li>Contact Us</li>
-        </ul>
-
-        <button className="login-btn">Log In / Sign Up</button>
-      </nav>
+  
+      
 
       {/* PRODUCT SECTION */}
 
@@ -428,10 +415,9 @@ const Productdetails = () => {
             </div>
           </div>
 
-          {/* GARLIC */}
+        
 
-          <div className="garlic-toggle">
-            <p>Preference with Garlic</p>
+          
 
             <label className="switch">
               <input type="checkbox" />
@@ -439,7 +425,7 @@ const Productdetails = () => {
             </label>
 
             
-          </div>
+       
 
           {/* CART */}
 

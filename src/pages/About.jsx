@@ -1,35 +1,25 @@
-import React from "react";
+
+
 import "./About.css";
-import { useNavigate } from "react-router-dom";
+
 import Footer from "../components/Footer"; 
-
-
-import logo from "../assets/logo.jpg";
+import Navbar from "../components/Navbar";
 import hero from "../assets/Hero1.jpeg";
 import storyImg from "../assets/story.jpg";
 import purityImg from "../assets/purity.jpg";
 
+
 function About() {
-  const navigate = useNavigate();
+ 
+  
+<Navbar />
+ 
   return (
     <div className="about-page">
 
-      {/* NAVBAR */}
-      <nav className="navbar">
+  
+       
 
-        <img src={logo} className="logo" alt="logo"/>
-
-        <ul className="nav-links">
-           <li onClick={()=>navigate("/Home")}>Home</li>
-          <li className="active">About Us</li>
-          <li onClick={()=>navigate("/pickles")}>Pickles</li>
-          <li>Customized</li>
-          <li>Contact Us</li>
-        </ul>
-
-        <button className="login-btn">Log In / Sign Up</button>
-
-      </nav>
 
 
       {/* hero SECTION */}

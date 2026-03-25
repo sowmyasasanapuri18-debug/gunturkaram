@@ -1,12 +1,13 @@
 import React from "react";
-import {BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Pickles from "./pages/Pickles";
 import Nonvegpickles from "./pages/Nonvegpickles";
 import Productdetails from "./pages/productdetails";
 import About from "./pages/About";
 import Customized from "./pages/Customized";
-import Contact from "./pages/Contact";
+import ContactUs from "./pages/ContactUs";
 import Cart from "./pages/Cart";
 import Wishlist from "./pages/Wishlist";
 import Profile from "./pages/Profile";
@@ -16,12 +17,13 @@ import Orders from "./pages/Orders";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Terms from "./pages/Terms";
 import Auth from "./pages/Auth";
+ 
 
 function App() {
 
   return (
     <BrowserRouter>
-    
+     <Navbar />
 
     <Routes>
 
@@ -34,7 +36,7 @@ function App() {
       <Route path="/product/:id" element={<Productdetails />} />
       <Route path="/about" element={<About />} />
       <Route path="/customized" element={<Customized />} />
-      <Route path="/contact-us" element={<Contact />} />
+      <Route path="/contact-us" element={<ContactUs />} />
       <Route path="/cart" element={<Cart />} />
       <Route path="/wishlist" element={<Wishlist />} />
       <Route path="/profile" element={<Profile />} />

@@ -1,16 +1,17 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+
 import "./Wishlist.css";
 import Footer from "../components/Footer"; 
+import Navbar from "../components/Navbar";
 
 
 
 import mango from "../assets/cart.jpeg";
 import mutton from "../assets/mutton.png";
-import logo from "../assets/logo.jpg";
+
 
 function Wishlist() {
-
+<Navbar />
   const [items, setItems] = useState([
     { id:1, name:"Mango Pickle", weight:"250g", price:90, qty:1, img:mango },
     { id:2, name:"Mutton Pickle", weight:"250g", price:190, qty:1, img:mutton }
@@ -36,31 +37,7 @@ function Wishlist() {
 
     <div>
 
-      {/* NAVBAR */}
-      <nav className="navbar">
-
-        <div className="logoSection">
-          <img src={logo} alt="logo" />
-        </div>
-
-        <ul className="navLinks">
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/about">About Us</Link></li>
-          <li><Link to="/pickles">Pickles</Link></li>
-          <li><Link to="/customized">Customized</Link></li>
-          <li><Link to="/contact">Contact Us</Link></li>
-        </ul>
-
-        <div className="navIcons">
-          <Link to="/cart">🛒</Link>
-          <Link to="/wishlist">❤️</Link>
-           <Link to="/Notifications">🔔</Link>
-             <Link to="/profile">👤</Link>
-          
-          
-        </div>
-
-      </nav>
+      
 
 
       {/* WISHLIST PAGE */}

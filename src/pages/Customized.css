@@ -41,6 +41,11 @@ align-items:flex-start;
 flex:3;
 }
 
+
+ .order-btn{
+  display: none;
+ }
+
 /* STEP HEADER */
 
 .step-title{
@@ -201,5 +206,35 @@ cursor:pointer;
 .brand p {
   margin-bottom: 20px;
   line-height: 1.6;
+}
+
+
+
+
+
+
+@media (max-width: 768px) {
+  .summary{
+    display: none;
+  }
+}
+
+
+
+
+
+
+@media (max-width: 768px) {
+  .customized-container {
+    flex-direction: column;
+  }
+
+  .left-section {
+    width: 100%;
+  }
+
+  .right-section {
+    display: none;
+  }
 }
 

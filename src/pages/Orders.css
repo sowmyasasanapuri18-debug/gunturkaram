@@ -98,7 +98,7 @@ padding:25px;
 border-radius:12px;
 }
 
-.tabs{
+.orders-tabs{
 display:flex;
 gap:25px;
 margin:15px 0 30px 0;
@@ -161,3 +161,114 @@ cursor:pointer;
 }
 
 
+
+
+
+/* ========================= */
+/* 📱 MOBILE RESPONSIVE */
+/* ========================= */
+
+@media (max-width: 768px) {
+
+  /* NAVBAR */
+  .navbar {
+    padding: 10px 20px;
+  }
+
+  .nav-links {
+    display: none; /* optional for mobile */
+  }
+
+  .logo {
+    height: 40px;
+  }
+
+  .nav-icons span {
+    font-size: 18px;
+    margin-left: 15px;
+  }
+
+  /* BREADCRUMB */
+  .breadcrumb {
+    padding: 15px 20px;
+    font-size: 14px;
+  }
+
+  /* MAIN LAYOUT */
+  .orders-container {
+    flex-direction: column;
+    padding: 15px 20px;
+  }
+
+  /* SIDEBAR */
+  .sidebar {
+    width: 100%;
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+  }
+
+  .menu-item {
+    flex: 0 0 auto;
+    margin-bottom: 0;
+    padding: 10px 15px;
+    font-size: 14px;
+    white-space: nowrap;
+  }
+
+  .logout {
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  /* ORDERS SECTION */
+  .orders-section {
+    padding: 15px;
+  }
+
+  .orders-tabs {
+    gap: 15px;
+    font-size: 14px;
+    overflow-x: auto;
+  }
+
+  /* ORDER CARD */
+  .order-card {
+    padding: 12px;
+  }
+
+  .order-top {
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 12px;
+  }
+
+  .status {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+
+  /* ORDER BODY */
+  .order-body {
+    gap: 10px;
+  }
+
+  .order-body img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .order-info h3 {
+    font-size: 14px;
+  }
+
+  .order-info p {
+    font-size: 12px;
+  }
+
+  .arrow {
+    font-size: 18px;
+  }
+
+}

@@ -2,14 +2,15 @@ import React, { useState } from "react";
 import "./Cart.css";
 import cart from "../assets/cart.jpeg";
 import Footer from "../components/Footer"; 
+import Navbar from "../components/Navbar";
 
 
-import logo from "../assets/logo.jpg";
+
 import { useNavigate } from "react-router-dom";
 
 function Cart() {
   
-  
+  <Navbar />
    const navigate = useNavigate();
 
   const handleProceedToPay = () => {
@@ -24,26 +25,7 @@ function Cart() {
   return (
     <div className="cart">
 
-      {/* Navbar */}
-      <nav className="navbar">
-        <img src={logo} alt="logo"/>
-
-        <ul className="navLinks">
-          <li>Home</li>
-          <li>About Us</li>
-          <li>Pickles</li>
-          <li>Customized</li>
-          <li>Contact Us</li>
-        </ul>
-
-        <div className="navIcons">
-          <span>🛒</span>
-        <span onClick={()=>navigate("/wishlist")}>🤍</span>
-        <span onClick={()=>navigate("/Notifications")}>🔔</span>
-          <span onClick={()=>navigate("/Profile")}>👤</span>
-          
-        </div>
-      </nav>
+     
 
 
       {/* Cart Layout */}
@@ -122,7 +104,7 @@ function Cart() {
           </div>
 
           <button className="placeOrder" onClick={handleProceedToPay}>
-  Proceed to Pay
+  PlaceOrder
 </button>
 
           <p className="note">

@@ -1,12 +1,13 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+
 import "./Checkout.css";
 import OrderSuccessPopup from "./OrderSuccessPopup";
 import Footer from "../components/Footer"; 
+import Navbar from "../components/Navbar";
 
 
 
-import logo from "../assets/logo.jpg";
+
 import mango from "../assets/cart.jpeg";
 
 function Checkout() {
@@ -26,34 +27,12 @@ function Checkout() {
   const itemTotal = qty * price;
   const grandTotal = itemTotal + delivery;
 
+  <Navbar />
+
   return (
     <div>
 
-      {/* NAVBAR */}
-
-      <nav className="navbar">
-
-        <div className="logo">
-          <img src={logo} alt="logo"/>
-        </div>
-
-        <ul className="navLinks">
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/about">About Us</Link></li>
-          <li><Link to="/pickles">Pickles</Link></li>
-          <li><Link to="/customized">Customized</Link></li>
-          <li><Link to="/contact">Contact Us</Link></li>
-        </ul>
-
-        <div className="navIcons">
-          <Link to="/cart">🛒</Link>
-          <Link to="/wishlist">❤️</Link>
-          <Link to="/notifications">🔔</Link>
-          <Link to="/profile">👤</Link>
-        </div>
-
-      </nav>
-
+      
 
       {/* MAIN CHECKOUT */}
 

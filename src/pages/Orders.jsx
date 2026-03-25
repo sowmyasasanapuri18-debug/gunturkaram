@@ -1,9 +1,10 @@
 import React from "react";
 import "./Orders.css";
 import { useNavigate } from "react-router-dom";
-import logo from "../assets/logo.jpg";
+
 import mango from "../assets/cart.jpeg";
 import Footer from "../components/Footer"; 
+import Navbar from "../components/Navbar";
 
 
 function Orders() {
@@ -29,31 +30,11 @@ price:"₹90",
 img:mango
 }
 ];
-
+<Navbar />
 return (
 <div className="orders-page">
 
-{/* NAVBAR */}
 
-<nav className="navbar">
-<img src={logo} className="logo" alt="logo"/>
-
-<ul className="nav-links">
-<li>Home</li>
-<li>About Us</li>
-<li>Pickles</li>
-<li>Customized</li>
-<li>Contact Us</li>
-</ul>
-
-<div className="nav-icons">
-<span>🛒</span>
-<span>❤️</span>
-<span>🔔</span>
-<span>👤</span>
-</div>
-
-</nav>
 
 
 <div className="breadcrumb">
@@ -88,7 +69,7 @@ Home &gt; Orders
 
 <h2>My Orders</h2>
 
-<div className="tabs">
+<div className="orders-tabs">
 <span>All</span>
 <span>In Progress</span>
 <span>Delivered</span>

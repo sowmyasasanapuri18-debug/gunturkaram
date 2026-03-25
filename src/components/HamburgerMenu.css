@@ -1,0 +1,77 @@
+/* HAMBURGER DEFAULT HIDDEN (DESKTOP SAFE) */
+.hamburger {
+  display: none;
+}
+
+/* MOBILE ONLY */
+@media (max-width: 768px) {
+
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 1100;
+  }
+
+  .hamburger span {
+    width: 26px;
+    height: 3px;
+    background: black;
+    margin: 4px 0;
+    transition: 0.4s;
+  }
+  @media (min-width: 769px) {
+  .sidebar {
+    display: none;
+  }
+}
+
+  /* ANIMATION */
+  .hamburger.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .hamburger.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+
+  /* SIDEBAR */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 75%;
+    height: 100vh;
+    background: white;
+    padding-top: 80px;
+    transition: 0.4s ease;
+    z-index: 1000;
+    box-shadow: 5px 0 15px rgba(0,0,0,0.2);
+  }
+
+  .sidebar.show {
+    left: 0;
+  }
+
+  /* MENU ITEMS */
+  .sidebar ul {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .sidebar li {
+    padding: 18px 25px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+  }
+
+  /* ❌ REMOVE BLACK BACKGROUND */
+  .sidebar::after {
+    display: none !important;
+  }
+}

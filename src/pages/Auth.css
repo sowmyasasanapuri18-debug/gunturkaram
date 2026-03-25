@@ -2,7 +2,7 @@
 
 .container{
   display:flex;
-  height:100vh;
+  min-height: 100vh;
   width:100%;
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -164,4 +164,96 @@ input{
 
 .main-btn:hover{
   background:#921f0b;
+}
+
+
+
+/* ================= MOBILE RESPONSIVE ================= */
+
+@media screen and (max-width: 768px) {
+
+  /* STACK LAYOUT */
+  .container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  /* HIDE IMAGE COMPLETELY */
+  .left-section {
+    display: none !important;
+  }
+
+  /* FULL WIDTH FORM */
+  .right-section {
+    width: 100% !important;
+    padding: 20px;
+    align-items: stretch;
+  }
+
+  /* CENTER CONTENT */
+  .logo-area {
+    text-align: center;
+  }
+
+  .logo-area img {
+    width: 90px;
+  }
+
+  .right-section h1 {
+    text-align: center;
+    font-size: 22px;
+  }
+
+  
+
+  /* TABS FULL WIDTH */
+  .tabs {
+    width: 100%;
+  }
+
+  /* FIX FLIP CARD HEIGHT ISSUE */
+  .flip-card {
+    max-width: 100%;
+    height: auto;   /* 🔥 VERY IMPORTANT */
+  }
+
+  .flip-inner {
+    height: auto;   /* 🔥 VERY IMPORTANT */
+    transform: none !important; /* disable flip animation on mobile */
+  }
+
+  /* SHOW ONLY ACTIVE SIDE */
+  .flip-front,
+  .flip-back {
+    position: relative;
+    height: auto;
+    transform: none;
+    backface-visibility: visible;
+  }
+
+  /* HIDE ONE SIDE BASED ON STATE */
+  .flip-card:not(.flipped) .flip-back {
+    display: none;
+  }
+
+  .flip-card.flipped .flip-front {
+    display: none;
+  }
+
+  /* INPUTS FULL WIDTH */
+  input {
+    width: 100%;
+  }
+
+  /* BUTTON FULL WIDTH */
+  .main-btn {
+    width: 100%;
+  }
+
+  /* OPTIONS STACK */
+  .options {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
 }

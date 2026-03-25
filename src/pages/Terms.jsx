@@ -1,37 +1,20 @@
 import React from "react";
 import "./Terms.css";
-import logo from "../assets/logo.jpg";
+
 import { useNavigate } from "react-router-dom";
 import Footer from "../components/Footer"; 
+import Navbar from "../components/Navbar";
+
 
 
 function Terms() {
 
 const navigate = useNavigate();
 
+<Navbar />
 return (
 <div className="terms-page">
-     {/* NAVBAR */}
-            
-            <nav className="navbar">
-            <img src={logo} className="logo" alt="logo"/>
-            
-            <ul className="nav-links">
-            <li>Home</li>
-            <li>About Us</li>
-            <li>Pickles</li>
-            <li>Customized</li>
-            <li>Contact Us</li>
-            </ul>
-            
-            <div className="nav-icons">
-            <span>🛒</span>
-            <span>❤️</span>
-            <span>🔔</span>
-            <span>👤</span>
-            </div>
-            
-            </nav>
+     
     
 
 {/* Breadcrumb */}

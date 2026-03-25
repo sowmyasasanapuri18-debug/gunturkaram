@@ -1,0 +1,196 @@
+body{
+font-family: Arial;
+margin:0;
+}
+
+/* NAVBAR */
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:10px 40px;
+background:#fff;
+}
+
+.logo{
+height:60px;
+}
+
+.nav-links{
+display:flex;
+list-style:none;
+gap:30px;
+}
+
+.nav-links li{
+cursor:pointer;
+}
+
+.contact-btn{
+background:#ead9b6;
+padding:8px 20px;
+border-radius:20px;
+}
+
+.icons span{
+margin-left:15px;
+font-size:18px;
+cursor:pointer;
+}
+
+
+/* CONTACT SECTION */
+
+.contact-container{
+display:flex;
+gap:40px;
+padding:40px;
+}
+
+/* LEFT */
+
+.contact-left{
+width:50%;
+}
+
+.contact-image{
+width:100%;
+border-radius:20px;
+}
+
+.touch-box{
+margin-top:20px;
+background:#f5f1ee;
+padding:20px;
+border-radius:15px;
+}
+
+.touch-item{
+display:flex;
+align-items:center;
+margin-top:20px;
+}
+
+.icon{
+background:#e8c35e;
+color:white;
+width:40px;
+height:40px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+margin-right:15px;
+}
+
+
+/* RIGHT */
+
+.contact-form{
+width:50%;
+background:#f7f4f2;
+padding:30px;
+border-radius:20px;
+}
+
+.contact-form h1{
+text-align:center;
+margin-bottom:20px;
+}
+
+.contact-form label{
+display:block;
+margin-top:15px;
+}
+
+.contact-form input,
+.contact-form textarea{
+width:100%;
+padding:12px;
+margin-top:8px;
+border-radius:10px;
+border:1px solid #ccc;
+}
+
+.contact-form textarea{
+height:120px;
+}
+
+.contact-form button{
+margin-top:20px;
+width:100%;
+padding:15px;
+border:none;
+background:#7b1e1e;
+color:white;
+font-size:16px;
+border-radius:10px;
+cursor:pointer;
+}
+
+
+
+
+
+
+/* ========================= */
+/* 📱 MOBILE RESPONSIVE */
+/* ========================= */
+
+@media (max-width: 768px) {
+
+  /* NAVBAR */
+  .navbar {
+    padding: 10px 20px;
+  }
+
+  .nav-links {
+    display: none; /* hide menu for mobile (optional) */
+  }
+
+  .logo {
+    height: 50px;
+  }
+
+  /* CONTACT SECTION */
+  .contact-container {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  /* LEFT */
+  .contact-left {
+    width: 100%;
+  }
+
+  .contact-image {
+    height: auto;
+  }
+
+  .touch-box {
+    padding: 15px;
+  }
+
+  /* RIGHT */
+  .contact-form {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .contact-form h1 {
+    font-size: 20px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    padding: 10px;
+  }
+
+  .contact-form button {
+    padding: 12px;
+    font-size: 14px;
+  }
+}
+
+

@@ -3,33 +3,14 @@ import "./PrivacyPolicy.css";
 import { useNavigate } from "react-router-dom";
 import Footer from "../components/Footer"; 
 
-import logo from "../assets/logo.jpg";
+import Navbar from "../components/Navbar";
 
 function PrivacyPolicy() {
     const navigate = useNavigate();
+    <Navbar />
   return (
     <div className="privacy-page">
-        {/* NAVBAR */}
-        
-        <nav className="navbar">
-        <img src={logo} className="logo" alt="logo"/>
-        
-        <ul className="nav-links">
-        <li>Home</li>
-        <li>About Us</li>
-        <li>Pickles</li>
-        <li>Customized</li>
-        <li>Contact Us</li>
-        </ul>
-        
-        <div className="nav-icons">
-        <span>🛒</span>
-        <span>❤️</span>
-        <span>🔔</span>
-        <span>👤</span>
-        </div>
-        
-        </nav>
+       
 
       {/* Breadcrumb */}
       <div className="breadcrumb">

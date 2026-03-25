@@ -1,12 +1,13 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+
 import "./Customized.css";
 import Footer from "../components/Footer"; 
+import Navbar from "../components/Navbar";
 
 
 
 
-import logo from "../assets/logo.jpg";
+
 
 
 /* Base Images */
@@ -28,7 +29,7 @@ import gift from "../assets/Giftbox.png";
 import eco from "../assets/Ecopack.png";
 
 function Customized() {
-    const navigate = useNavigate();
+    
 
 const [base,setBase] = useState("Mango Pickle");
 const [oil,setOil] = useState("Sesame Oil");
@@ -36,7 +37,7 @@ const [spice,setSpice] = useState("Extra Hot");
 const [garlic,setGarlic] = useState("Yes");
 const [pack,setPack] = useState("Glass Jar");
 const [qty,setQty] = useState(1);
-
+<Navbar />
 const baseItems = [
 {img:mango,name:"Mango Pickle"},
 {img:lemon,name:"Lemon Pickle"},
@@ -62,29 +63,7 @@ return (
 
 <div className="custom-page">
 
-    {/* NAVBAR */}
-    
-    <nav className="navbar">
-    
-    <img src={logo} className="logo" alt="logo" />
-    
-    <ul className="nav-links">
-    <li onClick={()=>navigate("/")}>Home</li>
-    <li onClick={()=>navigate("/about")}>About Us</li>
-    <li onClick={()=>navigate("/pickles")}>Pickles</li>
-    <li onClick={()=>navigate("/customized")}>Customized</li>
-    <li onClick={()=>navigate("/contact-us")}>Contact Us</li>
-    </ul>
-    
-    <button
-    className="login-btn"
-    onClick={() => navigate("/login")}
-    >
-    Log In / Sign Up
-    </button>
-    
-    </nav>
-
+   
 {/* HERO */}
 <div className="custom-hero">
 
@@ -218,6 +197,7 @@ onClick={()=>setPack(item.name)}
 <option>500 Grams</option>
 <option>1 KG</option>
 </select>
+<button className="order-btn">Proceed</button>
 
 </div>
 
@@ -265,7 +245,7 @@ onClick={()=>setPack(item.name)}
 </div>
 
 <button className="cart-btn">Add to Cart</button>
-<button className="order-btn">Place Order Now</button>
+<button className="order-btn">Proceed</button>
 
 </div>
 

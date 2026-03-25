@@ -3,44 +3,6 @@ font-family: Arial;
 margin:0;
 }
 
-/* NAVBAR */
-
-.navbar{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px 80px;
-background:white;
-}
-
-.logo{
-height:45px;
-}
-
-.nav-links{
-display:flex;
-gap:30px;
-list-style:none;
-}
-
-.nav-links li{
-cursor:pointer;
-}
-
-.active{
-background:#e7d6b1;
-padding:6px 12px;
-border-radius:10px;
-}
-
-.login-btn{
-background:#7a1c17;
-color:white;
-border:none;
-padding:10px 18px;
-border-radius:20px;
-}
-
 
 /* hero */
 
@@ -221,8 +183,145 @@ border-radius:12px;
 
 
 
-.copyright{
-text-align:center;
-margin-top:30px;
-font-size:14px;
+
+
+
+
+
+
+/* ================= MOBILE RESPONSIVE ================= */
+@media (max-width: 768px) {
+
+  /* Navbar */
+  .navbar {
+    flex-direction: column;
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .login-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Hero Section */
+  .hero {
+    height: auto;
+    padding: 40px 15px;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+    line-height: 1.3;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+
+  .hero button {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  /* Our Story Section */
+  .story-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .story-image img {
+    width: 100%;
+    height: auto;
+  }
+
+  .story-text {
+    text-align: center;
+  }
+/* ===== MOBILE ONLY (Process + Promise) ===== */
+@media (max-width: 768px) {
+
+  /* -------- OUR PROCESS -------- */
+  .process-cards {
+    display: grid;
+    grid-template-columns: 1fr; /* 1 card per row */
+    gap: 15px;
+    padding: 0 15px;
+  }
+
+  .process-card {
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+  }
+
+  .process-card img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .process-card h3 {
+    font-size: 18px;
+  }
+
+  .process-card p {
+    font-size: 14px;
+  }
+
+
+  /* -------- OUR PROMISE -------- */
+  .promise-container {
+    display: grid;
+    grid-template-columns: 1fr; /* stack items */
+    gap: 12px;
+    padding: 0 15px;
+  }
+
+  .promise-box {
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+    font-size: 14px;
+  }
+
 }
+
+  /* Purity Section */
+  .purity-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .purity-image img {
+    width: 100%;
+    height: auto;
+  }
+
+  .purity-text {
+    text-align: center;
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 20px;
+  }
+
+  .footer-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .footer img {
+    margin: auto;
+  }
+}
+
