@@ -38,38 +38,37 @@ const addToCart = (id) => {
 const products = [
 {
 name:"Avakaya Pickle",
-price:"₹350",
-oldprice: "400",
+price:350,
+oldprice:400,
 desc:"Sun-cured raw mango pieces blended with traditional spices and cold-pressed oil for a bold flavour.",
 type:"veg",
 image:pickle
 },
 {
 name:"Allam Mango Pickle",
-price:"₹350",
-oldprice: "400",
+price:350,
+oldprice:400,
 desc:"Sun-cured raw mango pieces blended with traditional spices and cold-pressed oil for a bold flavour.",
 type:"veg",
 image:pickle
 },
 {
 name:"Sweet Mango Pickle",
-price:"₹350",
-oldprice: "400",
+price:350,
+oldprice:400,
 desc:"Sun-cured raw mango pieces blended with traditional spices and cold-pressed oil for a bold flavour.",
 type:"veg",
 image:pickle
 },
 {
 name:"Spice Mango Pickle",
-price:"₹350",
-oldprice: "400",
+price:350,
+oldprice:400,
 desc:"Sun-cured raw mango pieces blended with traditional spices and cold-pressed oil for a bold flavour.",
 type:"veg",
 image:pickle
 },
-]
-
+];
 const filteredProducts = products.filter(p => p.type === category);
 
 return (
@@ -172,61 +171,57 @@ Non Veg
 </div>
 
 
-{/* PRODUCTS */}
-
 <div className="products-grid">
 
-{filteredProducts.map((item,index)=>(
+{filteredProducts.map((item, index) => (
 
-<div className="product-card">
+  <div className="product-card" key={index}>
 
+    <div className="image-box">
+      <img src={item.image} alt="pickle"/>
 
-<div className="image-box">
+      <span
+        className={`heart-icon ${likedItems[index] ? "active" : ""}`}
+        onClick={() => toggleLike(index)}
+      >
+        ♥
+      </span>
+    </div>
 
-<img src={item.image} alt="pickle"/>
+    {/* TOP ROW */}
+    <div className="top-row">
+  <h3 className="product-name">{item.name}</h3>
 
-<span
-  className={`heart-icon ${likedItems[index] ? "active" : ""}`}
-  onClick={() => toggleLike(index)}
->
-  ♥
-</span>
-
-
+  <div className="price">
+    ₹{item.price}
+    <span className="old-price"> ₹{item.oldprice}</span>
+  </div>
 </div>
 
-<h3>{item.name}</h3>
+    <p className="desc">{item.desc}</p>
 
-<p className="desc">{item.desc}</p>
+    {/* BOTTOM RIGHT */}
+    <div className="bottom-row">
+      
 
-<div className="price-row">
-
-<div className="price">
-                    {item.price}
-                    <span className="old-price"> ₹{item.oldprice}</span>
-                  </div>
-
+      <button
+        className={`cart-btn ${cartItems[index] ? "added" : ""}`}
+        onClick={(e) => {
+          e.stopPropagation();
+          addToCart(index);
+        }}
+      >
+        {cartItems[index] ? "Added to Cart 🛒" : "Add to Cart"}
+      </button>
 
 <select>
-<option>250 Grams</option>
-<option>500 Grams</option>
-<option>1 Kg</option>
-</select>
+        <option>250 Grams</option>
+        <option>500 Grams</option>
+        <option>1 Kg</option>
+      </select>
+    </div>
 
-</div>
-
-<button
-  className={`cart-btn ${cartItems[index] ? "added" : ""}`}
-  onClick={(e) => {
-    e.stopPropagation();
-    addToCart(index);
-  }}
->
-  {cartItems[index] ? "Added to Cart 🛒" : "Add to Cart"}
-</button>
-
-
-</div>
+  </div>
 
 ))}
 

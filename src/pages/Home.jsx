@@ -390,7 +390,7 @@
 import React, { useState } from "react";
 import SuccessPopup from "./SuccessPopup";
 import Footer from "../components/Footer"; 
-import Navbar from "../components/Navbar";
+// import Navbar from "../components/Navbar";
 
 
 import { useNavigate } from "react-router-dom";
@@ -411,6 +411,8 @@ import cleaning from "../assets/cleaning.jpg";
 import sunDrying from "../assets/sundrying.jpg";
 import marination from "../assets/marination.jpg";
 import packing from "../assets/packing.jpg";
+import curve from "../assets/curve.png";
+import userImg from "../assets/user.png";
 
 
 function Home() {
@@ -437,7 +439,7 @@ const toggleWishlist = (id) => {
   }));
 };
 
-<Navbar />
+
 /* PRODUCTS WITH ID (FIXED) */
 const products = [
 {
@@ -557,52 +559,56 @@ Customized Pickles
 {products.map((item) => (
   <div className="card" key={item.id}>
 
-   <div className="img-box">
-  <img
-  src={item.image}
-  alt={item.name}
-  style={{ cursor: "pointer" }}
-  onClick={() => navigate("/product/1", { stat1e: item })}
-/>
+    {/* Image */}
+    <div className="img-box">
+      <img
+        src={item.image}
+        alt={item.name}
+        onClick={() => navigate("/product/1", { state: item })}
+      />
 
-  <span
-    className={`heart ${wishlist[item.id] ? "active" : ""}`}
-    onClick={(e) => {
-      e.stopPropagation();
-      toggleWishlist(item.id);
-    }}
-  >
-    {wishlist[item.id] ? "❤️" : "♡"}
-  </span>
+      <span
+        className={`heart ${wishlist[item.id] ? "active" : ""}`}
+        onClick={(e) => {
+          e.stopPropagation();
+          toggleWishlist(item.id);
+        }}
+      >
+        {wishlist[item.id] ? "❤️" : "♡"}
+      </span>
+    </div>
+
+  <div className="title-row">
+  <h3>{item.name}</h3>
+
+  <div className="price-box">
+    <span className="price">{item.price}</span>
+    <span className="old-price">₹{item.oldPrice}</span>
+  </div>
 </div>
 
-    <h3>{item.name}</h3>
-    <p className="desc">{item.desc}</p>
+<p className="desc">{item.desc}</p>
 
-    <div className="price-row">
-      <span className="price">{item.price}</span>
-      <span className="old-price">₹{item.oldPrice}</span>
+    {/* ✅ Bottom Row */}
+    <div className="bottom-row">
+      <button
+        className="cart-btn"
+        onClick={(e) => handleAddToCart(e)}
+      >
+        Add to Cart
+      </button>
 
-      <select>
+      <select className="weight">
         <option>250g</option>
         <option>500g</option>
         <option>1Kg</option>
       </select>
     </div>
 
-    <button
-      className="cart-btn"
-      onClick={(e) => handleAddToCart(e)}
-    >
-      Add to Cart
-    </button>
-
   </div>
 ))}
 </div>
-
 </section>
-
 
 {/* SPICE LEVEL */}
 <section className="section">
@@ -643,7 +649,9 @@ How hot can you handle? Choose your heat and discover the perfect pickle.
 <p>{step.desc}</p>
 </div>
 
-{i < stepsData.length - 1 && <div className="arrow">➜</div>}
+{i < stepsData.length - 1 && (
+  <img src={curve} alt="curve" className="curve-arrow" />
+)}
 
 </React.Fragment>
 ))}
@@ -661,19 +669,28 @@ How hot can you handle? Choose your heat and discover the perfect pickle.
 <div className="reviews">
 
 <div className="review">
-<h4>Vedika</h4>
+<div className="user-info">
+  <img src={userImg} alt="user" />
+  <h4>Vedika</h4>
+</div>
 <p>“The Mango Avakaya reminded me of my grandmother's pickle!Absolutely austhentic taste.”</p>
 ⭐ ⭐ ⭐ ⭐ ⭐
 </div>
 
 <div className="review">
-<h4>Vedika</h4>
+<div className="user-info">
+  <img src={userImg} alt="user" />
+  <h4>Vedika</h4>
+</div>
 <p>“The Mango Avakaya reminded me of my grandmother's pickle!Absolutely austhentic taste.”</p>
 ⭐ ⭐ ⭐ ⭐ ⭐
 </div>
 
 <div className="review">
-<h4>Vedika</h4>
+<div className="user-info">
+  <img src={userImg} alt="user" />
+  <h4>Vedika</h4>
+</div>
 <p>“The Mango Avakaya reminded me of my grandmother's pickle!Absolutely austhentic taste.”</p>
 ⭐ ⭐ ⭐ ⭐ ⭐
 </div>

@@ -1,0 +1,150 @@
+/* Layout */
+.settings-container {
+  display: flex;
+  height: 100vh;
+  font-family: "Segoe UI", sans-serif;
+  background: #f5f5f5;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 260px;
+  background: #5a0000;
+  color: #fff;
+  padding: 20px;
+}
+
+.logo {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+}
+
+.menu li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.menu li:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.management-title {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.active {
+  background: #fff;
+  color: #5a0000;
+  font-weight: bold;
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  padding: 30px;
+}
+
+/* Topbar */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.topbar input {
+  width: 60%;
+  padding: 12px 15px;
+  border-radius: 10px;
+  border: none;
+  background: #eee;
+  outline: none;
+}
+
+.notification-icon {
+  background: #f3d78c;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+/* Titles */
+h1 {
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  color: gray;
+  margin-bottom: 20px;
+}
+
+/* Setting Item */
+.setting-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.setting-item h4 {
+  margin: 0;
+}
+
+.setting-item p {
+  margin: 5px 0 0;
+  color: gray;
+  font-size: 14px;
+}
+
+/* Toggle Switch */
+.switch {
+  position: relative;
+  width: 50px;
+  height: 25px;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  background: #ddd;
+  border-radius: 20px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  cursor: pointer;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  top: 2.5px;
+  background: white;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.switch input:checked + .slider {
+  background: #4caf50;
+}
+
+.switch input:checked + .slider::before {
+  transform: translateX(24px);
+}

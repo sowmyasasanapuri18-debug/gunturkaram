@@ -7,16 +7,7 @@ background:#fafafa;
 }
 
 
-/* NAVBAR */
 
-.navbar{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px 40px;
-background:#fff;
-border-bottom:1px solid #eee;
-}
 
 .logo img{
 height:55px;
@@ -72,53 +63,71 @@ padding:0 40px 40px 40px;
 
 /* LEFT SIDEBAR */
 
-.profileMenu{
+.profile-menu{
 width:300px;
-background:#fff;
-border-radius:15px;
+background:white;
 padding:20px;
-box-shadow:0 4px 10px rgba(0,0,0,0.08);
+border-radius:15px;
+border:1px solid #ddd;
 display:flex;
 flex-direction:column;
 gap:15px;
 }
 
-.menuItem{
-padding:15px;
+.menu-item{
+padding:16px;
+border:1px solid #ddd;
 border-radius:10px;
-border:1px solid #eee;
 cursor:pointer;
 font-size:16px;
 }
 
-.menuItem:hover{
-background:#f7f7f7;
-}
-
-.menuItem.active{
-background:#7d1c1c;
+.menu-item.active{
+background:#7a1c1c;
 color:white;
 border:none;
 }
 
 
+
 /* LOGOUT BUTTON */
 
-.logoutBtn{
-margin-top:40px;
-padding:15px;
-border-radius:12px;
-border:1px solid #ff4d4d;
-background:#fff;
-color:#ff4d4d;
-font-size:16px;
-cursor:pointer;
+.logout-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  width: 100%;
+  max-width: 380px;
+  margin: 20px auto;
+  padding: 20px;
+
+  background-color: #f5f5f5;
+  border: 1px solid #f2a3a3;
+  border-radius: 20px;
+
+  color: #e60000;
+  font-size: 20px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: all 0.25s ease;
+
+  /* soft bottom shadow like screenshot */
+  box-shadow: 0px 6px 10px rgba(255, 0, 0, 0.12);
 }
 
-.logoutBtn:hover{
-background:#ff4d4d;
-color:white;
+/* icon */
+.logout-icon {
+  font-size: 20px;
 }
+
+/* hover (very subtle like UI) */
+.logout-btn:hover {
+  background-color: #fff0f0;
+}
+
 
 
 /* PROFILE FORM */
@@ -193,23 +202,7 @@ background:#5f1414;
 
 @media (max-width: 768px) {
 
-  /* NAVBAR */
-  .navbar {
-    padding: 10px 20px;
-  }
-
-  .navLinks {
-    display: none; /* hide links for mobile (optional) */
-  }
-
-  .logo img {
-    height: 45px;
-  }
-
-  .navIcons {
-    gap: 15px;
-    font-size: 18px;
-  }
+  
 
   /* BREADCRUMB */
   .breadcrumb {

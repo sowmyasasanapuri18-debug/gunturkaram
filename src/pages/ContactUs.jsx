@@ -28,7 +28,7 @@ function Contact() {
             <h2>Stay In Touch</h2>
 
             <div className="touch-item">
-              <div className="icon">✉</div>
+              <div className="contact-icon">✉</div>
               <div>
                 <h4>E-mail Id</h4>
                 <p>gunturuKaaram@gmail.com</p>

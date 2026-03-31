@@ -1,15 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Orders.css";
 import { useNavigate } from "react-router-dom";
 
 import mango from "../assets/cart.jpeg";
 import Footer from "../components/Footer"; 
-import Navbar from "../components/Navbar";
+
+import { FiLogOut } from "react-icons/fi";
+import { FaUserCircle } from "react-icons/fa";
+import LogoutModal from "../pages/LogoutModal";
 
 
 function Orders() {
     
 const navigate = useNavigate();
+const [showLogoutModal, setShowLogoutModal] = useState(false);
 const orders = [
 {
 status:"Inprogress",
@@ -30,9 +34,15 @@ price:"₹90",
 img:mango
 }
 ];
-<Navbar />
+
+
+
 return (
+
+   
+    
 <div className="orders-page">
+    
 
 
 
@@ -46,19 +56,45 @@ Home &gt; Orders
 
 {/* LEFT SIDEBAR */}
 
-<div className="sidebar">
+<div className="Orders-sidebar">
 
-<div className="menu-item">👤 My Profile</div>
+  <div 
+    className="menu-item" 
+    onClick={() => navigate("/profile")}
+  >
+    <FaUserCircle className="menu-icon" />
+    <span>My Profile</span>
+  </div>
 
-<div className="menu-item active">👤 Orders</div>
+        <div className="menuItem active">
+      <FaUserCircle className="menuIcon" />
+      Orders
+    </div>
 
- <div className="menu-item" onClick={() => navigate("/privacy")}>
- 👤 Privacy and Policy
-</div>
+  <div 
+    className="menu-item" 
+    onClick={() => navigate("/privacy")}
+  >
+    <FaUserCircle className="menu-icon" />
+    <span>Privacy and Policy</span>
+  </div>
 
-<div className="menu-item">👤 Terms and Conditions</div>
+  <div 
+    className="menu-item" 
+    onClick={() => navigate("/Terms")}
+  >
+    <FaUserCircle className="menu-icon" />
+    <span>Terms and Conditions</span>
+  </div>
 
-<button className="logout">⭘ Log Out</button>
+  {/* LOGOUT */}
+   <button
+            className="logout-btn"
+            onClick={() => setShowLogoutModal(true)}
+          >
+    <FiLogOut className="logout-icon" />
+    <span>Log Out</span>
+  </button>
 
 </div>
 
@@ -115,6 +151,15 @@ Home &gt; Orders
 
 
  <Footer /> 
+ <LogoutModal
+  isOpen={showLogoutModal}
+  onClose={() => setShowLogoutModal(false)}
+  onLogout={() => {
+    localStorage.clear();
+    navigate("/login");
+  }}
+/>
+
 
 </div>
 );

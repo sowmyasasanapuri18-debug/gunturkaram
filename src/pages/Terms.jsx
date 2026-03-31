@@ -1,18 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
+
 import "./Terms.css";
 
 import { useNavigate } from "react-router-dom";
 import Footer from "../components/Footer"; 
 import Navbar from "../components/Navbar";
+import { FiLogOut } from "react-icons/fi";
+import { FaUserCircle } from "react-icons/fa";
+import LogoutModal from "../pages/LogoutModal";
+
+
 
 
 
 function Terms() {
+    
 
 const navigate = useNavigate();
 
-<Navbar />
+
+const [showLogoutModal, setShowLogoutModal] = useState(false);
+
+
+
+ <Navbar />
 return (
+    
 <div className="terms-page">
      
     
@@ -27,27 +40,43 @@ Home &gt; Terms and conditions
 
 {/* LEFT SIDEBAR */}
 
-<div className="sidebar">
+<div className="terms-sidebar">
 
-<div className="menu-item" onClick={()=>navigate("/profile")}>
-👤 My Profile
-</div>
+  <div 
+    className="menu-item"
+    onClick={() => navigate("/profile")}
+  >
+    <FaUserCircle className="menu-icon" />
+    <span>My Profile</span>
+  </div>
 
-<div className="menu-item" onClick={()=>navigate("/orders")}>
-👤 Orders
-</div>
+  <div 
+    className="menu-item"
+    onClick={() => navigate("/orders")}
+  >
+    <FaUserCircle className="menu-icon" />
+    <span>Orders</span>
+  </div>
 
-<div className="menu-item" onClick={()=>navigate("/privacy")}>
-👤 Privacy and Policy
-</div>
+  <div 
+    className="menu-item"
+    onClick={() => navigate("/privacy")}
+  >
+    <FaUserCircle className="menu-icon" />
+    <span>Privacy and Policy</span>
+  </div>
 
-<div className="menu-item active">
-👤 Terms and Conditions
-</div>
+       <div className="menuItem active">
+     <FaUserCircle className="menuIcon" />
+     Terms and Conditions
+   </div>
 
-<button className="logout-btn">
-⟳ Log Out
-</button>
+  {/* LOGOUT */}
+  <button className="logout-btn" onClick={() => setShowLogoutModal(true)}>
+
+    <FiLogOut className="logout-icon" />
+    <span>Log Out</span>
+  </button>
 
 </div>
 
@@ -92,6 +121,14 @@ our exclusive property and may not be reused.
 </div>
 
 <Footer /> 
+<LogoutModal
+  isOpen={showLogoutModal}
+  onClose={() => setShowLogoutModal(false)}
+  onLogout={() => {
+    localStorage.clear();
+    navigate("/login");
+  }}
+/>
 
 </div>
 );

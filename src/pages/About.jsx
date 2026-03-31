@@ -3,21 +3,22 @@
 import "./About.css";
 
 import Footer from "../components/Footer"; 
-import Navbar from "../components/Navbar";
+
 import hero from "../assets/Hero1.jpeg";
 import storyImg from "../assets/story.jpg";
 import purityImg from "../assets/purity.jpg";
+import bgImage from "../assets/bg.png";
 
 
 function About() {
  
   
-<Navbar />
+
  
   return (
     <div className="about-page">
 
-  
+    
        
 
 
@@ -93,11 +94,11 @@ function About() {
         <div className="process-grid">
 
           <div className="process-card">
-            <div className="icon">🌱</div>
+            <div className="about-icon">🌱</div>
             <h4>Step 1</h4>
             <h3>Selecting Fresh Ingredients</h3>
             <p>
-              We handpick farm-fresh mangoes and high-quality spices.
+             We handpick farm-fresh raw mangoes and high-quality spices to ensure superior taste and nutrition.
             </p>
           </div>
 
@@ -106,7 +107,8 @@ function About() {
             <h4>Step 2</h4>
             <h3>Traditional Spice Blending</h3>
             <p>
-              Authentic Andhra spices blended using traditional methods.
+               We handpick farm-fresh raw mangoes and high-quality spices to ensure superior taste and nutrition.
+        
             </p>
           </div>
 
@@ -115,7 +117,7 @@ function About() {
             <h4>Step 3</h4>
             <h3>Sun-Marinating Process</h3>
             <p>
-              Natural sun curing enhances flavor and authenticity.
+              We handpick farm-fresh raw mangoes and high-quality spices to ensure superior taste and nutrition.
             </p>
           </div>
 
@@ -124,7 +126,7 @@ function About() {
             <h4>Step 4</h4>
             <h3>Hygienic Packing</h3>
             <p>
-              Packed carefully to preserve freshness and taste.
+              We handpick farm-fresh raw mangoes and high-quality spices to ensure superior taste and nutrition.
             </p>
           </div>
 
@@ -135,8 +137,12 @@ function About() {
 
 
       {/* SPECIAL */}
+       <section
+        className="special"
+        style={{ backgroundImage: `url(${bgImage})` }}
+      >
 
-      <section className="special">
+
 
         <p className="small-title center">Our Promise</p>
 

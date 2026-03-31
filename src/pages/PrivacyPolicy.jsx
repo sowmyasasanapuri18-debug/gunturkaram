@@ -1,12 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import "./PrivacyPolicy.css";
 import { useNavigate } from "react-router-dom";
 import Footer from "../components/Footer"; 
 
 import Navbar from "../components/Navbar";
+import { FiLogOut } from "react-icons/fi";
+import { FaUserCircle } from "react-icons/fa";
+import LogoutModal from "../pages/LogoutModal";
+
 
 function PrivacyPolicy() {
     const navigate = useNavigate();
+    const [showLogoutModal, setShowLogoutModal] = useState(false);
+    
     <Navbar />
   return (
     <div className="privacy-page">
@@ -14,33 +20,50 @@ function PrivacyPolicy() {
 
       {/* Breadcrumb */}
       <div className="breadcrumb">
-        Home &gt; Privacy and Policy
+        Privacy and Policy
       </div>
 
       <div className="privacy-container">
 
         {/* LEFT SIDEBAR */}
-        <div className="sidebar">
+        <div className="privacypolicy-sidebar">
 
-          <div className="menu-item">👤 My Profile</div>
+  <div 
+    className="privacymenu-item"
+    onClick={() => navigate("/profile")}
+  >
+    <FaUserCircle className="menu-icon" />
+    <span>My Profile</span>
+  </div>
 
-<div className="menu-item">👤 Orders</div>
-<div className="menu-item active" >👤 Privacy and Policy</div>
+  <div 
+    className="menu-item"
+    onClick={() => navigate("/orders")}
+  >
+    <FaUserCircle className="menu-icon" />
+    <span>Orders</span>
+  </div>
 
+  <div className="menu-item active">
+    <FaUserCircle className="menu-icon" />
+    <span>Privacy and Policy</span>
+  </div>
 
-          
+  <div 
+    className="menu-item"
+    onClick={() => navigate("/terms")}
+  >
+    <FaUserCircle className="menu-icon" />
+    <span>Terms and Conditions</span>
+  </div>
 
-          
+  {/* LOGOUT */}
+  <button className="logout-btn" onClick={() => setShowLogoutModal(true)}>
+    <FiLogOut className="logout-icon" />
+    <span>Log Out</span>
+  </button>
 
-        <div className="menu-item" onClick={() => navigate("/terms")}>
-  👤 Terms and Conditions
 </div>
-
-          <button className="logout-btn">
-            ⟳ Log Out
-          </button>
-
-        </div>
 
         {/* RIGHT CONTENT */}
         <div className="policy-content">
@@ -77,6 +100,14 @@ function PrivacyPolicy() {
 
 
     <Footer />
+    <LogoutModal
+  isOpen={showLogoutModal}
+  onClose={() => setShowLogoutModal(false)}
+  onLogout={() => {
+    localStorage.clear();
+    navigate("/login");
+  }}
+/>
 
     </div>
   );

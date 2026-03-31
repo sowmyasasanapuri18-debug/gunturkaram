@@ -17,41 +17,7 @@ border-radius:12px;
 margin-bottom:20px;
 border:2px solid #e5c9c9;
 }
-.navbar{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px 40px;
-background:white;
-border-bottom:1px solid #eee;
-}
 
-.logoSection img{
-height:50px;
-}
-
-.navLinks{
-display:flex;
-gap:25px;
-list-style:none;
-}
-
-.navLinks a{
-text-decoration:none;
-color:black;
-font-weight:500;
-}
-
-.navIcons{
-display:flex;
-gap:20px;
-font-size:20px;
-}
-
-.navIcons a{
-text-decoration:none;
-color:#7d1c1c;
-}
 
 .productInfo{
 display:flex;
@@ -65,7 +31,7 @@ height:80px;
 border-radius:10px;
 }
 
-.rightSection{
+.wishlist-rightSection{
 display:flex;
 flex-direction:column;
 align-items:flex-end;

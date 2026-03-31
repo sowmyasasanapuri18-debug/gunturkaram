@@ -64,10 +64,10 @@ const Nonvegpickles = () => {
 
       {/* HERO SECTION */}
       <div
-        className="hero"
+        className="nonvegpickles-hero"
         style={{ backgroundImage: `url(${hero})` }}
       >
-        <div className="hero-text">
+        <div className="nonvegpickles-hero-text">
           <h1>Authentic Indian Pickles</h1>
           <p>
             Handcrafted with love, packed with tradition.
@@ -76,105 +76,106 @@ const Nonvegpickles = () => {
         </div>
       </div>
 
-      {/* PICKLES SECTION */}
-      <div className="pickles-section">
-
-        {/* HEADER */}
-        <div className="pickles-header">
-          <div>
-            <h2>🍗 Non Veg Pickles</h2>
-            <p>15 items found</p>
-          </div>
-
-          {/* TOGGLE */}
-          <div className="toggle-container">
-            <div
-              className="toggle-option"
-              onClick={() => navigate("/Pickles")}
-            >
-              🥬 Veg
-            </div>
-
-            <div className="toggle-option red active">
-              🍗 Non Veg
-            </div>
-          </div>
-        </div>
-
-        {/* CONTENT */}
-        <div className="content">
-
-          {/* LEFT FILTER */}
-          <div className="filter-box">
-            <h3>Primary Ingredient</h3>
-
-            {["Chicken", "Mutton", "Prawn", "Fish", "Crab"].map((item, i) => (
-              <label key={i} className="radio-item">
-                <input type="radio" name="ingredient" />
-                <span className="custom-radio"></span>
-                {item} Pickles (4)
-              </label>
-            ))}
-          </div>
+      
 
           {/* PRODUCTS */}
-          <div className="products">
-            {products.map((item) => (
-              <div className="card" key={item.id}>
+           <div className="pickles-section">
 
-                {/* IMAGE */}
-                <img src={item.img} alt={item.name} />
+  {/* HEADER */}
+  <div className="pickles-header">
+    <div>
+      <h2>🍗 Non Veg Pickles</h2>
+      <p>15 items found</p>
+    </div>
 
-                {/* ❤️ HEART (TOP RIGHT) */}
-                <span
-                  className={`heart-icon ${likedItems[item.id] ? "active" : ""}`}
-                  onClick={() => toggleLike(item.id)}
-                >
-                  ♥
-                </span>
+    <div className="toggle-container">
+      <div
+        className="toggle-option"
+        onClick={() => navigate("/Pickles")}
+      >
+        🥬 Veg
+      </div>
 
-                {/* CARD BODY */}
-                <div className="card-body">
-                  <h4>{item.name}</h4>
+      <div className="toggle-option red active">
+        🍗 Non Veg
+      </div>
+    </div>
+  </div>
 
-                  <p className="desc">
-                    Sun-cured mango pieces blended with traditional spices and
-                    cold-pressed oil for a bold, authentic flavour.
-                  </p>
+  {/* CONTENT */}
+  <div className="content">
 
-                  <div className="price">
-                    ₹{item.price}
-                    <span className="old-price"> ₹{item.oldprice}</span>
-                  </div>
+    {/* LEFT FILTER */}
+    <div className="filter-box">
+      <h3>Primary Ingredient</h3>
 
-                  {/* BUTTON */}
-                  <button
-                    className={`cart-btn ${cartItems[item.id] ? "added" : ""}`}
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      addToCart(item.id);
-                    }}
-                  >
-                    {cartItems[item.id]
-                      ? "Added to Cart 🛒"
-                      : "Add to Cart"}
-                  </button>
+      {["Chicken", "Mutton", "Prawn", "Fish", "Crab"].map((item, i) => (
+        <label key={i} className="radio-item">
+          <input type="radio" name="ingredient" />
+          <span className="custom-radio"></span>
+          {item} Pickles (4)
+        </label>
+      ))}
+    </div>
 
-                  {/* DROPDOWN (like screenshot) */}
-                  <select className="weight-dropdown">
-                    <option>250 Grams</option>
-                    <option>500 Grams</option>
-                    <option>1 Kg</option>
-                  </select>
+    {/* PRODUCTS */}
+    <div className="products">
+      {products.map((item) => (
+        <div className="card" key={item.id}>
 
-                </div>
-              </div>
-            ))}
+          {/* IMAGE */}
+          <div className="image-box">
+            <img src={item.img} alt={item.name} />
+
+            <span
+              className={`heart-icon ${likedItems[item.id] ? "active" : ""}`}
+              onClick={() => toggleLike(item.id)}
+            >
+              ♥
+            </span>
+          </div>
+
+          {/* TOP ROW */}
+          <div className="top-row">
+            <h3 className="product-name">{item.name}</h3>
+
+            <div className="price">
+              ₹{item.price}
+              <span className="old-price"> ₹{item.oldprice}</span>
+            </div>
+          </div>
+
+          {/* DESC */}
+          <p className="desc">
+            Sun-cured raw mango pieces blended with traditional spices and cold-pressed oil for a bold flavour.
+          </p>
+
+          {/* ACTION ROW */}
+          <div className="action-row">
+            <button
+              className={`cart-btn ${cartItems[item.id] ? "added" : ""}`}
+              onClick={(e) => {
+                e.stopPropagation();
+                addToCart(item.id);
+              }}
+            >
+              {cartItems[item.id] ? "Added 🛒" : "Add to Cart"}
+            </button>
+
+            <select>
+              <option>250 Grams</option>
+              <option>500 Grams</option>
+              <option>1 Kg</option>
+            </select>
           </div>
 
         </div>
-      </div>
+      ))}
+    </div>
 
+  </div>
+</div>
+           
       {/* FOOTER */}
       <Footer />
 

@@ -1,0 +1,105 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #f5f3f2;
+}
+
+.dashboard {
+  display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 240px;
+  height: 100vh;
+  background: #5c0b0b;
+  color: white;
+  padding: 20px;
+}
+
+.logo {
+  text-align: center;
+  color: #ffcc33;
+  margin-bottom: 40px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  padding: 12px;
+  margin: 10px 0;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 25px;
+}
+
+.sidebar li:hover,
+.sidebar .active {
+  background: white;
+  color: #5c0b0b;
+}
+
+.management {
+  margin-top: 40px;
+}
+
+/* Main */
+.main {
+  flex: 1;
+  padding: 20px 40px;
+}
+
+/* Topbar */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.topbar input {
+  width: 60%;
+  padding: 12px 20px;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  background: #eae6e4;
+}
+
+.bell {
+  background: #f4c542;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+/* Header */
+.header {
+  margin: 20px 0;
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+thead {
+  background: #7a1d1d;
+  color: white;
+}
+
+th, td {
+  padding: 15px;
+  text-align: center;
+}
+
+tbody tr {
+  border-bottom: 1px solid #ddd;
+}

@@ -4,7 +4,12 @@ import { useNavigate } from "react-router-dom";
 import "./Profile.css";
 import ProfileSuccessPopup from "./ProfileSuccessPopup";
 import Footer from "../components/Footer"; 
-import Navbar from "../components/Navbar";
+
+import { FiLogOut } from "react-icons/fi";
+import { FaUserCircle } from "react-icons/fa";
+import LogoutModal from "../pages/LogoutModal";
+
+
 
 
 
@@ -12,6 +17,7 @@ import Navbar from "../components/Navbar";
 function Profile() {
     const navigate = useNavigate();
     const [showPopup, setShowPopup] = useState(false);
+    const [showLogoutModal, setShowLogoutModal] = useState(false);
 
     
 
@@ -29,11 +35,11 @@ function Profile() {
       [e.target.name]: e.target.value
     });
   };
-<Navbar />
+
   return (
     <div>
 
-     
+    
 
 
       {/* BREADCRUMB */}
@@ -48,17 +54,35 @@ function Profile() {
         {/* LEFT MENU */}
         <div className="profileMenu">
 
-          <div className="menuItem active">👤 My Profile</div>
+          <div className="menuItem active">
+    <FaUserCircle className="menuIcon" />
+    My Profile
+  </div>
+
          <div 
 className="menuItem"
 onClick={() => navigate("/orders")}
 >
-👤 Orders
-</div>
-          <div className="menuItem">👤 Privacy and Policy</div>
-          <div className="menuItem">👤 Terms and Conditions</div>
+<FaUserCircle className="menuIcon" />
+    Orders
+  </div>
+          <div className="menuItem">
+    <FaUserCircle className="menuIcon" />
+    Privacy and Policy
+  </div>
 
-          <button className="logoutBtn">⭮ Log Out</button>
+  <div className="menuItem">
+    <FaUserCircle className="menuIcon" />
+    Terms and Conditions
+  </div>
+
+          <button
+            className="logout-btn"
+            onClick={() => setShowLogoutModal(true)}
+          >
+  <FiLogOut className="logout-icon" />
+  <span>Log Out</span>
+</button>
 
         </div>
 
@@ -142,6 +166,14 @@ onClick={() => navigate("/orders")}
 
 
    <Footer />
+   <LogoutModal
+  isOpen={showLogoutModal}
+  onClose={() => setShowLogoutModal(false)}
+  onLogout={() => {
+    localStorage.clear();
+    navigate("/login");
+  }}
+/>
     <ProfileSuccessPopup
   show={showPopup}
   onClose={() => setShowPopup(false)}

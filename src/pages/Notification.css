@@ -1,0 +1,182 @@
+/* ========================= */
+/* GLOBAL */
+/* ========================= */
+.notification-container {
+  display: flex;
+  font-family: "Segoe UI", sans-serif;
+  background: #f5f5f5;
+}
+
+/* ========================= */
+/* SIDEBAR */
+/* ========================= */
+.sidebar {
+  width: 260px;
+  background: #5a0000;
+  color: white;
+  padding: 20px;
+  height: 100vh;
+}
+
+.logo {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+}
+
+.menu li {
+  padding: 12px;
+  display: flex;
+  gap: 10px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.menu li:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+.active {
+  background: white;
+  color: #5a0000;
+}
+
+.management-title {
+  margin: 20px 0 10px;
+}
+
+/* ========================= */
+/* MAIN */
+/* ========================= */
+.main-content {
+  flex: 1;
+  padding: 25px;
+}
+
+/* ========================= */
+/* TOPBAR */
+/* ========================= */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.topbar input {
+  width: 60%;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background: #eee;
+}
+
+.notification-icon {
+  background: #f3d78c;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+/* ========================= */
+/* HEADER */
+/* ========================= */
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header-row p {
+  color: gray;
+}
+
+.filter {
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: none;
+  background: #eee;
+}
+
+/* ========================= */
+/* NOTIFICATION LIST */
+/* ========================= */
+.notification-list {
+  margin-top: 10px;
+}
+
+/* ========================= */
+/* CARD */
+/* ========================= */
+.card {
+  position: relative; /* IMPORTANT */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  padding: 15px 20px 15px 70px; /* 👈 space for circle */
+  border-radius: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* ========================= */
+/* YELLOW CIRCLE */
+/* ========================= */
+.yellow-circle {
+  position: absolute;
+  left: 20px;                /* 👈 LEFT SIDE */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+
+  /* Gradient + shadow for modern look */
+  background: linear-gradient(135deg, #f4c430, #ffd966);
+  box-shadow: 0 4px 10px rgba(244, 196, 48, 0.4);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #5a0000;
+  font-size: 18px;
+}
+
+/* ========================= */
+/* CONTENT */
+/* ========================= */
+.content {
+  flex: 1;
+}
+
+.content h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.content p {
+  margin: 5px 0 0;
+  font-size: 14px;
+  color: #555;
+}
+
+/* ========================= */
+/* DATE */
+/* ========================= */
+.date {
+  font-size: 14px;
+  color: #777;
+}
+
+/* ========================= */
+/* HOVER EFFECT */
+/* ========================= */
+.card:hover {
+  transform: translateY(-2px);
+  transition: 0.3s;
+  box-shadow: 0 5px 12px rgba(0,0,0,0.15);
+}

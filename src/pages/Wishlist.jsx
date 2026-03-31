@@ -59,7 +59,7 @@ function Wishlist() {
               </div>
             </div>
 
-            <div className="rightSection">
+            <div className="wishlist-rightSection">
 
               <div className="qtyBox">
                 <button onClick={()=>decreaseQty(item.id)}>-</button>

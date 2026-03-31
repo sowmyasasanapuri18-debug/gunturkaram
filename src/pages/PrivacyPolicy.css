@@ -20,13 +20,13 @@ color:#333;
 .privacy-container{
 display:flex;
 gap:30px;
-padding:20px 80px;
+padding:20px 40px;
 }
 
 
-/* SIDEBAR */
+/* Sidebar */
 
-.sidebar{
+.privacypolicy-sidebar{
 width:300px;
 background:white;
 padding:20px;
@@ -37,33 +37,56 @@ flex-direction:column;
 gap:15px;
 }
 
-.menu-item{
+.privacymenu-item{
 padding:16px;
 border:1px solid #ddd;
 border-radius:10px;
-font-size:16px;
-display:flex;
-align-items:center;
-gap:10px;
 cursor:pointer;
+font-size:16px;
 }
 
 .menu-item.active{
-background:#7b1d1d;
+background:#7a1c1c;
 color:white;
 border:none;
 }
 
-.logout-btn{
-margin-top:40px;
-padding:14px;
-border-radius:12px;
-border:1px solid #f2bcbc;
-background:white;
-color:red;
-font-size:16px;
-cursor:pointer;
+.logout-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  width: 100%;
+  max-width: 380px;
+  margin: 20px auto;
+  padding: 20px;
+
+  background-color: #f5f5f5;
+  border: 1px solid #f2a3a3;
+  border-radius: 20px;
+
+  color: #e60000;
+  font-size: 20px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: all 0.25s ease;
+
+  /* soft bottom shadow like screenshot */
+  box-shadow: 0px 6px 10px rgba(255, 0, 0, 0.12);
 }
+
+/* icon */
+.logout-icon {
+  font-size: 20px;
+}
+
+/* hover (very subtle like UI) */
+.logout-btn:hover {
+  background-color: #fff0f0;
+}
+
 
 
 /* POLICY CONTENT */
